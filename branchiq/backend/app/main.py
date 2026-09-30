@@ -1,5 +1,5 @@
 """
-BranchIQ FastAPI Application
+AVENUE FastAPI Application
 
 Entry point for the backend API.
 Run with: uvicorn app.main:app --reload

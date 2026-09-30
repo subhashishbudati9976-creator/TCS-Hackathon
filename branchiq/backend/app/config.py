@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     app_version: str = "0.1.0"
 
     # Database
-    database_url: str = "sqlite:///./branchiq.db"
+    database_url: str = "sqlite:///./avenue.db"
 
     # CORS — comma-separated origins
     allowed_origins: str = "http://localhost:5173"

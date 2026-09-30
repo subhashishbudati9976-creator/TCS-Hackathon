@@ -24,7 +24,7 @@ export const CustomerAssistant: React.FC = () => {
     {
       id: 'm1',
       sender: 'assistant',
-      text: "Hello! I am your **BranchIQ Banking Concierge**. I can help you check branch crowding, explain required paperwork, and guide you to instant online self-service channels. What would you like to know today?",
+      text: "Hello! I am your **AVENUE Banking Concierge**. I can help you check branch crowding, explain required paperwork, and guide you to instant online self-service channels. What would you like to know today?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ])
@@ -91,7 +91,7 @@ export const CustomerAssistant: React.FC = () => {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base sm:text-lg font-bold text-white tracking-tight">BranchIQ AI Assistant</h1>
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-tight">AVENUE AI Assistant</h1>
                 <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-medium">
                   Grounded • Real Data
                 </span>

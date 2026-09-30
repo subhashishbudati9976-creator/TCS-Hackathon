@@ -1,4 +1,4 @@
-# BranchIQ Backend — Python Dependencies
+# AVENUE Backend — Python Dependencies
 # Pin versions for reproducibility
 
 # Web framework

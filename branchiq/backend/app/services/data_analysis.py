@@ -27,9 +27,10 @@ class DataAnalysisService:
 
     def __init__(self, data_dir: Optional[Path] = None):
         if data_dir is None:
-            # Check data/processed or branchiq/data/processed
+            # Check data/processed, avenue/data/processed, or branchiq/data/processed
             candidates = [
                 Path("data/processed"),
+                Path("avenue/data/processed"),
                 Path("branchiq/data/processed"),
                 Path("../data/processed"),
                 Path("../../data/processed"),
@@ -55,9 +56,12 @@ class DataAnalysisService:
         path = self.data_dir / filename
         if not path.exists():
             # Try alternate path
-            alt = Path("branchiq/data/processed") / filename
+            alt = Path("avenue/data/processed") / filename
             if alt.exists():
                 return pd.read_csv(alt)
+            alt2 = Path("branchiq/data/processed") / filename
+            if alt2.exists():
+                return pd.read_csv(alt2)
             alt_root = Path("data/processed") / filename
             if alt_root.exists():
                 return pd.read_csv(alt_root)

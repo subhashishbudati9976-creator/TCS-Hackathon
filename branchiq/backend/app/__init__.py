@@ -1,1 +1,1 @@
-"""BranchIQ FastAPI application package."""
+"""AVENUE FastAPI application package."""

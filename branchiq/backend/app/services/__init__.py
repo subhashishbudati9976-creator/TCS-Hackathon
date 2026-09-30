@@ -1,1 +1,1 @@
-"""BranchIQ services package."""
+"""AVENUE services package."""

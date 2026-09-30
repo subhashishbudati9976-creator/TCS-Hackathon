@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
-import { BranchIQLogo } from './BranchIQLogo'
+import { AvenueLogo } from './AvenueLogo'
 import {
   Building2,
   BarChart3,
@@ -59,7 +59,7 @@ export const Navbar: React.FC = () => {
         {/* Brand Logo & Title */}
         <div className="flex items-center gap-6">
           <Link to={isManager ? '/manager/dashboard' : '/customer/dashboard'} className="group flex items-center gap-1">
-            <BranchIQLogo size={36} subtitle="Branch Intelligence Engine" />
+            <AvenueLogo size={36} subtitle="Branch Intelligence Engine" />
           </Link>
 
           {/* Navigation Links */}
@@ -113,14 +113,14 @@ export const Navbar: React.FC = () => {
             </div>
             <div className="flex flex-col text-left">
               <span className="text-xs font-semibold text-slate-200 leading-tight">{user?.name || 'Authorized User'}</span>
-              <span className="text-[10px] font-mono text-slate-400 leading-tight">{user?.email || 'user@branchiq.ai'}</span>
+              <span className="text-[10px] font-mono text-slate-400 leading-tight">{user?.email || 'user@avenue.ai'}</span>
             </div>
           </div>
 
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            title="Sign out of BranchIQ"
+            title="Sign out of AVENUE"
             className="p-2 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 hover:border-rose-500/30 border border-transparent transition-all cursor-pointer"
           >
             <LogOut className="w-4 h-4" />

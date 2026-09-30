@@ -24,6 +24,7 @@ router = APIRouter(prefix="/api/analysis", tags=["analysis"])
 def _find_analysis_dir() -> Path:
     candidates = [
         Path("data/analysis"),
+        Path("avenue/data/analysis"),
         Path("branchiq/data/analysis"),
         Path("../data/analysis"),
         Path("../../data/analysis"),

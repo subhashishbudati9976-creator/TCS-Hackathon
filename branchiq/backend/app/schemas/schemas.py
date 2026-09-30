@@ -15,7 +15,7 @@ from pydantic import BaseModel, Field
 
 class HealthResponse(BaseModel):
     status: str = Field(default="ok", description="Overall service health")
-    service: str = Field(default="BranchIQ API", description="Service name")
+    service: str = Field(default="AVENUE API", description="Service name")
     version: str = Field(description="API version string")
 
 

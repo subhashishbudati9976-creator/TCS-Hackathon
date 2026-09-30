@@ -14,7 +14,7 @@ Pipeline:
   6. Save models and evaluation report
 
 Usage:
-    cd branchiq/backend
+    cd avenue/backend
     python -m ml.train_demand_model
 """
 

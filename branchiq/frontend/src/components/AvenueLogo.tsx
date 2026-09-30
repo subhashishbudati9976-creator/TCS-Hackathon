@@ -1,13 +1,13 @@
 import React from 'react'
 
-interface BranchIQLogoProps {
+interface AvenueLogoProps {
   className?: string
   size?: number
   showText?: boolean
   subtitle?: string
 }
 
-export const BranchIQLogo: React.FC<BranchIQLogoProps> = ({
+export const AvenueLogo: React.FC<AvenueLogoProps> = ({
   className = '',
   size = 38,
   showText = true,
@@ -68,7 +68,7 @@ export const BranchIQLogo: React.FC<BranchIQLogoProps> = ({
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5">
             <span className="font-extrabold text-lg tracking-tight text-white font-sans">
-              Branch<span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">IQ</span>
+              AVE<span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">NUE</span>
             </span>
             <span className="text-[9px] px-1.5 py-0.5 rounded font-mono font-semibold uppercase tracking-wider bg-cyan-950/70 text-cyan-400 border border-cyan-800/60 shadow-xs">
               AI Ops

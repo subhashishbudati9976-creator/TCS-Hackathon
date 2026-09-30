@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// AVENUE / BranchIQ — Shared TypeScript Interfaces
+// AVENUE — Shared TypeScript Interfaces
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface HealthResponse {

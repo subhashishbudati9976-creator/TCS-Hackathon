@@ -1,4 +1,4 @@
-# BranchIQ — Intelligent Branch Service Load & Customer Experience Optimizer
+# AVENUE — Intelligent Branch Service Load & Customer Experience Optimizer
 
 > **TCS Hackathon 2026 Project**  
 > An AI-powered operations cockpit and customer guidance platform that eliminates bank branch congestion, predicts bottlenecks before they occur, and optimizes counter staffing dynamically.
@@ -26,13 +26,13 @@ Modern retail banks face a universal customer experience crisis:
 
 ---
 
-## 💡 The BranchIQ Solution
+## 💡 The AVENUE Solution
 
-BranchIQ bridges the gap between customer expectations and operational capacity through **two synchronized portals**:
+AVENUE bridges the gap between customer expectations and operational capacity through **two synchronized portals**:
 
 ```
                        ┌──────────────────────────────────────────────┐
-                       │                   BranchIQ                   │
+                       │                   AVENUE                    │
                        │   Intelligent Branch Optimization Engine     │
                        └──────────────────────┬───────────────────────┘
                                               │
@@ -64,7 +64,7 @@ BranchIQ bridges the gap between customer expectations and operational capacity 
 
 ## 📊 Dataset & Machine Learning Architecture
 
-BranchIQ is trained on **79,529 real-world branch visit logs** across 10 flagship branches, 15 service categories, and 100+ bank personnel:
+AVENUE is trained on **79,529 real-world branch visit logs** across 10 flagship branches, 15 service categories, and 100+ bank personnel:
 
 - **Demand Forecasting:** Gradient Boosted Models trained on time-of-day, day-of-week, seasonal spikes, and historical arrival velocity.
 - **Queue Pressure & Wait Time Estimation:** Continuous calculation of service rate ($\mu$) vs arrival rate ($\lambda$) per counter type.
@@ -94,7 +94,7 @@ BranchIQ is trained on **79,529 real-world branch visit logs** across 10 flagshi
 
 ### 2. Backend Setup & Startup
 ```powershell
-cd branchiq/backend
+cd avenue/backend
 
 # Create & activate virtual environment
 python -m venv .venv
@@ -117,7 +117,7 @@ uvicorn app.main:app --port 8000 --reload
 
 ### 3. Frontend Setup & Startup
 ```powershell
-cd branchiq/frontend
+cd avenue/frontend
 
 # Install dependencies
 npm install
@@ -134,25 +134,25 @@ npm run dev
 
 ## 🧪 Testing & Verification
 
-BranchIQ includes automated test suites covering all backend routes and frontend builds:
+AVENUE includes automated test suites covering all backend routes and frontend builds:
 
 ### Run API End-to-End Verification (15/15 Endpoints):
 ```powershell
-cd branchiq/backend
+cd avenue/backend
 .venv\Scripts\python verify_apis.py
 ```
 *Output: All 15 endpoints verified with `[200] OK`.*
 
 ### Run Automated Unit & MVP Integration Tests (19/19 Tests):
 ```powershell
-cd branchiq/backend
+cd avenue/backend
 .venv\Scripts\python -m pytest tests/test_all_mvp.py
 ```
 *Output: `19 passed in 12.11s [100%]`.*
 
 ### Test Frontend Build:
 ```powershell
-cd branchiq/frontend
+cd avenue/frontend
 npm run build
 ```
 *Output: `✓ built in 8.00s` with zero TypeScript errors.*

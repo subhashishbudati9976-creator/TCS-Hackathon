@@ -43,6 +43,7 @@ def _resolve_data_dir() -> Path:
     """Find data/processed regardless of working directory."""
     candidates = [
         Path("data/processed"),
+        Path("avenue/data/processed"),
         Path("branchiq/data/processed"),
         DATA_DIR,
     ]

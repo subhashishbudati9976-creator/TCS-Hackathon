@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
-import { BranchIQLogo } from '../components/BranchIQLogo'
+import { AvenueLogo } from '../components/AvenueLogo'
 import { ShieldCheck, UserCheck, Lock, Mail, ArrowRight, AlertCircle, Sparkles, Activity } from 'lucide-react'
 
 export const Login: React.FC = () => {
@@ -49,7 +49,7 @@ export const Login: React.FC = () => {
       {/* Platform Header */}
       <div className="text-center mb-8 max-w-lg z-10">
         <div className="inline-flex items-center justify-center mb-4">
-          <BranchIQLogo size={52} subtitle="Intelligent Branch Operations & Flow Optimization" />
+          <AvenueLogo size={52} subtitle="Intelligent Branch Operations & Flow Optimization" />
         </div>
         <p className="text-sm text-slate-400 max-w-md mx-auto leading-relaxed">
           AI-driven operations cockpit predicting bottlenecks, optimizing counter staffing, and guiding bank customers in real time.
@@ -196,7 +196,7 @@ export const Login: React.FC = () => {
 
       <footer className="mt-8 text-center text-xs text-slate-500 z-10 flex items-center gap-2 font-mono">
         <Activity className="w-3.5 h-3.5 text-cyan-500" />
-        <span>BranchIQ • TCS Hackathon Submission 2026 • AI Engine & Operations Cockpit</span>
+        <span>AVENUE • TCS Hackathon Submission 2026 • AI Engine & Operations Cockpit</span>
       </footer>
     </div>
   )

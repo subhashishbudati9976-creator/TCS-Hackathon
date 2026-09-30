@@ -1,5 +1,5 @@
 """
-Google Gemini API Client & Prescriptive AI Service for BranchIQ.
+Google Gemini API Client & Prescriptive AI Service for AVENUE.
 """
 
 from __future__ import annotations
@@ -36,7 +36,7 @@ def generate_manager_recommendation(
     if client:
         try:
             prompt = f"""
-You are an intelligent banking branch operations assistant for BranchIQ (TCS Hackathon).
+You are an intelligent banking branch operations assistant for AVENUE (TCS Hackathon).
 Analyze the following branch situation for branch '{branch_id}' and provide actionable prescriptive guidance:
 
 Branch Load & Waiting Queue:

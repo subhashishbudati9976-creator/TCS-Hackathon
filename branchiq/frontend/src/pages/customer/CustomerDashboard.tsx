@@ -52,7 +52,7 @@ export const CustomerDashboard: React.FC = () => {
               <span>Smart Branch & Digital Concierge</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-              Welcome to BranchIQ Banking
+              Welcome to AVENUE Banking
             </h1>
             <p className="text-sm text-slate-300 mt-2 leading-relaxed">
               Check live branch wait times before you leave home, find instant digital alternatives, and know exactly what paperwork to bring.
@@ -79,7 +79,7 @@ export const CustomerDashboard: React.FC = () => {
                 className="px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
               >
                 <Bot className="w-4 h-4 text-cyan-400" />
-                <span>Ask BranchIQ AI Assistant</span>
+                <span>Ask AVENUE AI Assistant</span>
               </button>
             </div>
           </div>

@@ -17,6 +17,6 @@ async def health_check() -> HealthResponse:
     """Returns a simple JSON payload confirming the backend is running."""
     return HealthResponse(
         status="ok",
-        service="BranchIQ API",
+        service="AVENUE API",
         version=settings.app_version,
     )
