@@ -41,7 +41,7 @@ export const Navbar: React.FC = () => {
   const managerLinks = [
     { to: '/manager/dashboard', label: 'Command Center', icon: BarChart3 },
     { to: '/manager/branches', label: 'Branch Network', icon: Building2 },
-    { to: '/manager/simulation', label: 'What-If Simulation', icon: SlidersHorizontal },
+    { to: '/manager/simulation', label: 'Digital Twin (What-If)', icon: Cpu },
   ]
 
   const customerLinks = [
