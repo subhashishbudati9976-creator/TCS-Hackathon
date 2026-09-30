@@ -1,0 +1,11 @@
+branch_id,branch_code,branch_name,city,area,latitude,longitude,branch_capacity,number_of_counters,operating_hours,branch_type,baseline_traffic_level,traffic_multiplier
+BR001,METRO-01,Metro Central Flagship,Bengaluru,MG Road / CBD,12.9716,77.5946,120,14,09:30-16:30,Flagship / Business District,High,1.45
+BR002,TECH-02,Tech Corridor Cyber Branch,Bengaluru,Electronic City,12.8399,77.677,90,10,09:30-16:30,Urban Commercial / Tech Hub,High,1.3
+BR003,TRD-03,Old Town Commercial Hub,Bengaluru,Chickpet Market,12.9698,77.575,100,12,09:30-16:30,Commercial / Wholesale Market,High,1.35
+BR004,SUB-04,Green Valley Suburban Branch,Bengaluru,Jayanagar Residential,12.9308,77.5838,60,7,09:30-16:30,Suburban Retail / Residential,Medium,0.95
+BR005,CAMP-05,University Campus Branch,Bengaluru,Jnana Bharati Campus,12.9465,77.5028,50,5,10:00-16:00,Institutional / University,Medium,0.8
+BR006,CORP-06,Westside Business Park,Bengaluru,Whitefield,12.9698,77.75,75,8,09:30-16:30,Corporate MSME Hub,Medium,1.05
+BR007,MKT-07,Eastend Market Junction,Bengaluru,Indiranagar,12.9784,77.6408,70,8,09:30-16:30,High-Street Retail,Medium,1.0
+BR008,PRM-08,Northern Heights Wealth Centre,Bengaluru,Sadashivanagar,13.0068,77.5813,45,6,09:30-16:30,Affluent Residential / Wealth,Low,0.7
+BR009,IND-09,Industrial Township Branch,Bengaluru,Peenya Industrial Area,13.0285,77.5197,85,9,09:00-16:30,Industrial & Remittance Hub,Medium,1.15
+BR010,EXP-10,Airport Expressway Branch,Bengaluru,Hebbal Outer Ring,13.0358,77.597,40,5,09:00-17:00,Transit / Express Branch,Low,0.65

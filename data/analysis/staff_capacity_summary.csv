@@ -1,0 +1,11 @@
+branch_id,total_staff,active_staff,avg_availability,branch_name,total_workload_minutes,avg_waiting_time,number_of_counters,total_capacity_minutes,utilization_rate,capacity_gap_hours
+BR001,15,15,0.9173333333333333,Metro Central Flagship,135783.5,3.18,14,762854.4,0.178,-10451.2
+BR002,12,12,0.9208333333333334,Tech Corridor Cyber Branch,121821.1,4.62,10,612612.0,0.199,-8179.8
+BR003,13,12,0.9215384615384615,Old Town Commercial Hub,112518.2,3.6,12,613081.1,0.184,-8342.7
+BR004,8,6,0.93625,Green Valley Suburban Branch,87848.9,6.03,7,311434.2,0.282,-3726.4
+BR005,7,7,0.91,University Campus Branch,73153.6,7.34,5,353152.8,0.207,-4666.7
+BR006,10,8,0.9339999999999999,Westside Business Park,111688.4,5.39,8,414247.7,0.27,-5042.7
+BR007,10,10,0.9279999999999999,Eastend Market Junction,92440.7,4.93,8,514483.2,0.18,-7034.0
+BR008,8,7,0.9475,Northern Heights Wealth Centre,67117.6,4.73,6,367705.8,0.183,-5009.8
+BR009,11,11,0.9509090909090908,Industrial Township Branch,106472.7,4.94,9,579902.4,0.184,-7890.5
+BR010,7,6,0.9128571428571428,Airport Expressway Branch,59368.0,6.12,5,303652.8,0.196,-4071.4

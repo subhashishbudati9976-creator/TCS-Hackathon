@@ -1,0 +1,9 @@
+issue_category,feedback_count,avg_rating,avg_wait_experienced,negative_count,positive_count,neg_sentiment_pct
+Service Quality,3815,4.55,3.23,46,3679,1.21
+Staff Behavior,3703,4.59,3.13,45,3575,1.22
+Appointment Experience,1516,4.66,2.4,0,1516,0.0
+Digital Service Experience,1490,4.67,2.45,0,1490,0.0
+Waiting Time,353,1.21,41.31,353,0,100.0
+General Experience,162,3.16,17.59,29,55,17.9
+Branch Congestion,87,1.4,35.36,87,0,100.0
+Staff Shortage,57,1.23,33.91,57,0,100.0

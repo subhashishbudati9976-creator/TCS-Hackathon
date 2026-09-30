@@ -1,93 +1,152 @@
-import { useEffect, useState } from 'react'
-import apiClient from './api/client'
-import type { HealthResponse } from './types'
+import React from 'react'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { AuthProvider, useAuth } from './contexts/AuthContext'
+import { Navbar } from './components/Navbar'
+import { Login } from './pages/Login'
+import { ManagerDashboard } from './pages/manager/ManagerDashboard'
+import { BranchComparison } from './pages/manager/BranchComparison'
+import { BranchDetail } from './pages/manager/BranchDetail'
+import { SimulationPage } from './pages/manager/SimulationPage'
+import { CustomerDashboard } from './pages/customer/CustomerDashboard'
+import { ServiceDiscovery } from './pages/customer/ServiceDiscovery'
+import { BranchFinder } from './pages/customer/BranchFinder'
+import { CustomerAssistant } from './pages/customer/CustomerAssistant'
 
-type ConnectionStatus = 'checking' | 'connected' | 'error'
+// Protected Route wrapper with role check
+const ProtectedRoute: React.FC<{ children: React.ReactNode; requiredRole?: 'MANAGER' | 'CUSTOMER' }> = ({
+  children,
+  requiredRole,
+}) => {
+  const { user, token, role, isLoading } = useAuth()
 
-function App() {
-  const [status, setStatus] = useState<ConnectionStatus>('checking')
-  const [health, setHealth] = useState<HealthResponse | null>(null)
-  const [errorMsg, setErrorMsg] = useState<string>('')
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#0e1117] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
 
-  useEffect(() => {
-    apiClient
-      .get<HealthResponse>('/health')
-      .then((res) => {
-        setHealth(res.data)
-        setStatus('connected')
-      })
-      .catch((err) => {
-        setStatus('error')
-        setErrorMsg(err.message ?? 'Unknown error')
-      })
-  }, [])
+  if (!token || !user) {
+    return <Navigate to="/login" replace />
+  }
+
+  if (requiredRole && role !== requiredRole) {
+    return <Navigate to={role === 'MANAGER' ? '/manager/dashboard' : '/customer/dashboard'} replace />
+  }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white flex flex-col items-center justify-center gap-8 p-8">
-      {/* Logo / Title */}
-      <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-blue-400">
-          Branch<span className="text-white">IQ</span>
-        </h1>
-        <p className="mt-2 text-gray-400 text-sm">
-          Intelligent Branch Service Load &amp; Customer Experience Optimizer
-        </p>
-      </div>
-
-      {/* Status Card */}
-      <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 w-full max-w-md shadow-xl">
-        <h2 className="text-lg font-semibold mb-4 text-gray-200">System Status</h2>
-
-        {/* Frontend */}
-        <StatusRow label="Frontend" status="connected" detail="React + Vite running" />
-
-        {/* Backend */}
-        <StatusRow
-          label="Backend API"
-          status={status}
-          detail={
-            status === 'connected'
-              ? `${health?.service} v${health?.version} — ${health?.status}`
-              : status === 'checking'
-              ? 'Connecting to http://localhost:8000…'
-              : errorMsg
-          }
-        />
-      </div>
-
-      <p className="text-xs text-gray-600">
-        TCS Hackathon — BranchIQ Foundation Build
-      </p>
-    </div>
+    <>
+      <Navbar />
+      <main>{children}</main>
+    </>
   )
 }
 
-// ─────────────────────────────────────────────────────────────────────────────
-// StatusRow helper component
-// ─────────────────────────────────────────────────────────────────────────────
+// Root redirect based on active user state
+const HomeRedirect: React.FC = () => {
+  const { role, token, isLoading } = useAuth()
 
-interface StatusRowProps {
-  label: string
-  status: ConnectionStatus | 'connected'
-  detail: string
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#0e1117] flex items-center justify-center">
+        <div className="w-8 h-8 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin" />
+      </div>
+    )
+  }
+
+  if (!token) {
+    return <Navigate to="/login" replace />
+  }
+
+  return <Navigate to={role === 'MANAGER' ? '/manager/dashboard' : '/customer/dashboard'} replace />
 }
 
-function StatusRow({ label, status, detail }: StatusRowProps) {
-  const dot =
-    status === 'connected'
-      ? 'bg-green-500'
-      : status === 'checking'
-      ? 'bg-yellow-400 animate-pulse'
-      : 'bg-red-500'
-
+export const App: React.FC = () => {
   return (
-    <div className="flex items-start gap-3 py-3 border-b border-gray-800 last:border-0">
-      <span className={`mt-1.5 h-2.5 w-2.5 rounded-full flex-shrink-0 ${dot}`} />
-      <div>
-        <p className="font-medium text-gray-100">{label}</p>
-        <p className="text-xs text-gray-500 mt-0.5">{detail}</p>
-      </div>
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Routes>
+          {/* Public Authentication */}
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Login />} />
+
+          {/* Root Redirect */}
+          <Route path="/" element={<HomeRedirect />} />
+
+          {/* Manager Protected Routes */}
+          <Route
+            path="/manager/dashboard"
+            element={
+              <ProtectedRoute requiredRole="MANAGER">
+                <ManagerDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/manager/branches"
+            element={
+              <ProtectedRoute requiredRole="MANAGER">
+                <BranchComparison />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/manager/branches/:branchId"
+            element={
+              <ProtectedRoute requiredRole="MANAGER">
+                <BranchDetail />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/manager/simulation"
+            element={
+              <ProtectedRoute requiredRole="MANAGER">
+                <SimulationPage />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Customer Protected Routes */}
+          <Route
+            path="/customer/dashboard"
+            element={
+              <ProtectedRoute requiredRole="CUSTOMER">
+                <CustomerDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/customer/services"
+            element={
+              <ProtectedRoute requiredRole="CUSTOMER">
+                <ServiceDiscovery />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/customer/branches"
+            element={
+              <ProtectedRoute requiredRole="CUSTOMER">
+                <BranchFinder />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/customer/assistant"
+            element={
+              <ProtectedRoute requiredRole="CUSTOMER">
+                <CustomerAssistant />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Fallback */}
+          <Route path="*" element={<HomeRedirect />} />
+        </Routes>
+      </BrowserRouter>
+    </AuthProvider>
   )
 }
 

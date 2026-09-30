@@ -1,0 +1,95 @@
+{
+  "model": "XGBoostRegressor",
+  "target": "customer_count per branch per hour",
+  "train_period": {
+    "start": "2025-10-01",
+    "end": "2026-02-04"
+  },
+  "val_period": {
+    "start": "2026-02-05",
+    "end": "2026-03-02"
+  },
+  "test_period": {
+    "start": "2026-03-03",
+    "end": "2026-03-27"
+  },
+  "train_rows": 7440,
+  "val_rows": 1600,
+  "test_rows": 1520,
+  "baseline_metrics": {
+    "val": {
+      "MAE": 3.516,
+      "RMSE": 4.4785,
+      "R2": 0.1237,
+      "MAPE_pct": 91.16
+    },
+    "test": {
+      "MAE": 3.4924,
+      "RMSE": 4.3993,
+      "R2": 0.1539,
+      "MAPE_pct": 82.62
+    }
+  },
+  "xgb_metrics": {
+    "val": {
+      "MAE": 2.0896,
+      "RMSE": 2.7373,
+      "R2": 0.6726,
+      "MAPE_pct": 39.8
+    },
+    "test": {
+      "MAE": 2.0384,
+      "RMSE": 2.6787,
+      "R2": 0.6863,
+      "MAPE_pct": 39.58
+    }
+  },
+  "feature_importance": {
+    "hour_of_day": 0.39137,
+    "is_salary_period": 0.10839,
+    "appointment_count": 0.10605,
+    "staff_available": 0.07294,
+    "rolling_mean_24h": 0.05006,
+    "is_month_end": 0.04471,
+    "day_of_week": 0.03475,
+    "day_of_month": 0.02259,
+    "rolling_mean_7d": 0.02042,
+    "local_event_flag": 0.01756,
+    "event_impact_factor": 0.01729,
+    "rolling_mean_3h": 0.01701,
+    "lag_24h": 0.01594,
+    "rolling_mean_6h": 0.01514,
+    "lag_1h": 0.01216
+  },
+  "feature_list": [
+    "hour_of_day",
+    "day_of_week",
+    "day_of_month",
+    "month",
+    "week_of_year",
+    "is_weekend",
+    "is_salary_period",
+    "is_month_start",
+    "is_month_end",
+    "local_event_flag",
+    "event_impact_factor",
+    "seasonal_encoded",
+    "appointment_count",
+    "staff_available",
+    "is_peak_hour",
+    "lag_1h",
+    "lag_24h",
+    "lag_same_hour_prev_week",
+    "rolling_mean_3h",
+    "rolling_mean_6h",
+    "rolling_mean_24h",
+    "rolling_mean_7d"
+  ],
+  "training_timestamp": "2026-09-30T13:38:41.982614",
+  "leakage_prevention": {
+    "method": "chronological_split",
+    "no_future_info": true,
+    "lag_shift": "lag_1h=shift(1), lag_24h=shift(24), lag_same_hour_prev_week=shift(7 days)",
+    "rolling_computed_over": "history only (shift(1) before rolling window)"
+  }
+}

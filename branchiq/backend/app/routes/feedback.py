@@ -1,28 +1,47 @@
 """
-Feedback NLP routes.
-Analyzes customer reviews using Gemini NLP and sentiment heuristics.
+AVENUE — Feedback & NLP Analysis Routes
+
+GET /api/feedback
+POST /api/feedback/analyze
 """
 
-from fastapi import APIRouter
-from app.schemas import FeedbackRequest, FeedbackAnalysis
-from app.services.gemini_client import analyze_customer_feedback_nlp
+from __future__ import annotations
+
+from typing import Any, Dict, Optional
+from fastapi import APIRouter, HTTPException, Query
+from pydantic import BaseModel, Field
+
+from ml.feedback_nlp import get_feedback_analysis, analyze_feedback
 
 router = APIRouter(prefix="/api/feedback", tags=["feedback"])
 
 
+class FeedbackTextInput(BaseModel):
+    text: str = Field(..., description="Customer feedback comment to analyze")
+    feedback_id: Optional[str] = Field(default=None)
+
+
+@router.get(
+    "",
+    summary="Get aggregated feedback NLP metrics and sentiment distributions",
+)
+async def get_feedback_summary(
+    branch_id: Optional[str] = Query(default=None, description="Optional branch ID filter")
+) -> Dict[str, Any]:
+    """Returns sentiment breakdown, top complaints, service-specific sentiment, and recent feedback."""
+    try:
+        return get_feedback_analysis(branch_id=branch_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
 @router.post(
     "/analyze",
-    response_model=FeedbackAnalysis,
-    summary="Analyze customer feedback sentiment",
+    summary="Real-time sentiment and topic analysis for a single text comment",
 )
-async def analyze_feedback(request: FeedbackRequest) -> FeedbackAnalysis:
-    """
-    Analyzes customer feedback text and returns sentiment and score.
-    """
-    result = analyze_customer_feedback_nlp(request.text)
-    return FeedbackAnalysis(
-        feedback_id="FB_LIVE_01",
-        text=request.text,
-        sentiment=result["sentiment"],
-        score=result["score"],
-    )
+async def analyze_single_feedback(payload: FeedbackTextInput) -> Dict[str, Any]:
+    """Analyzes a customer feedback text comment and returns sentiment score and category."""
+    try:
+        return analyze_feedback(text=payload.text, feedback_id=payload.feedback_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
