@@ -10,7 +10,7 @@ import {
   MapPin,
   LogOut,
   UserCheck,
-  Sparkles,
+  Layers,
 } from 'lucide-react'
 
 export const Navbar: React.FC = () => {
@@ -43,35 +43,40 @@ export const Navbar: React.FC = () => {
 
   const customerLinks = [
     { to: '/customer/dashboard', label: 'Customer Portal', icon: Compass },
-    { to: '/customer/services', label: 'Service Discovery', icon: Sparkles },
+    { to: '/customer/services', label: 'Service Catalog', icon: Layers },
     { to: '/customer/branches', label: 'Branch Finder', icon: MapPin },
-    { to: '/customer/assistant', label: 'AI Assistant', icon: Bot },
+    { to: '/customer/assistant', label: 'AVENUE Assistant', icon: Bot },
   ]
 
   const links = isManager ? managerLinks : customerLinks
 
   return (
-    <header className="sticky top-0 z-50 bg-[#161a22] border-b border-[#2d3748] px-4 sm:px-6 py-2.5 shadow-md">
-      <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Brand */}
-        <div className="flex items-center gap-6">
-          <Link to={isManager ? '/manager/dashboard' : '/customer/dashboard'} className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg shadow-sm">
+    <header className="sticky top-0 z-50 bg-[#0b101b] border-b border-[#1c2738] shadow-sm">
+      <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 h-16 sm:h-[68px] flex items-center justify-between">
+        {/* Left: Product Brand */}
+        <div className="flex items-center gap-6 lg:gap-8">
+          <Link
+            to={isManager ? '/manager/dashboard' : '/customer/dashboard'}
+            className="flex items-center gap-3 group focus:outline-none"
+          >
+            <div className="w-9 h-9 rounded-lg bg-emerald-500/10 border border-emerald-500/25 flex items-center justify-center text-emerald-400 font-bold text-sm tracking-wider group-hover:border-emerald-500/40 transition-colors">
               AV
             </div>
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-bold text-base tracking-wider text-slate-100">AVENUE</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono font-medium tracking-tight bg-slate-800 text-slate-400 border border-slate-700">
-                  MVP 1.0
+                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono font-medium tracking-tight bg-slate-800/80 text-emerald-400 border border-emerald-500/20">
+                  ENTERPRISE
                 </span>
               </div>
-              <p className="text-[11px] text-slate-400 font-medium">Branch Intelligence Platform</p>
+              <p className="text-[11px] text-slate-400 font-normal tracking-wide">
+                Branch Intelligence Platform
+              </p>
             </div>
           </Link>
 
-          {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1.5 ml-4">
+          {/* Center Navigation Links for Desktop */}
+          <nav className="hidden md:flex items-center gap-1.5 lg:ml-4">
             {links.map((link) => {
               const Icon = link.icon
               const isActive = location.pathname === link.to
@@ -79,13 +84,13 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+                  className={`flex items-center gap-2 px-3.5 py-2 rounded-md text-xs font-medium transition-all ${
                     isActive
-                      ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm'
-                      : 'text-slate-300 hover:text-slate-100 hover:bg-slate-800/60'
+                      ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/25'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/50 border border-transparent'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-emerald-400' : 'text-slate-400'}`} />
                   <span>{link.label}</span>
                 </Link>
               )
@@ -93,33 +98,35 @@ export const Navbar: React.FC = () => {
           </nav>
         </div>
 
-        {/* Right action area */}
-        <div className="flex items-center gap-3">
+        {/* Right: Role, Profile & Sign Out */}
+        <div className="flex items-center gap-3 sm:gap-4">
           {/* Quick Demo Role Switcher */}
           <button
             onClick={handleRoleSwitch}
+            type="button"
             title="Switch demo persona for testing"
-            className="flex items-center gap-2 text-xs font-medium px-2.5 py-1.5 rounded border border-slate-700 bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 hover:text-white transition-all shadow-sm cursor-pointer"
+            className="flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-md border border-slate-700/80 bg-slate-800/60 text-slate-300 hover:bg-slate-700/60 hover:text-white transition-all cursor-pointer"
           >
             <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="hidden sm:inline">Role:</span>
-            <span className={`font-semibold ${isManager ? 'text-amber-400' : 'text-blue-400'}`}>
+            <span className="hidden sm:inline text-slate-400">Role:</span>
+            <span className={`font-semibold ${isManager ? 'text-amber-400' : 'text-sky-400'}`}>
               {role}
             </span>
-            <span className="text-[10px] text-slate-400 underline ml-1">Switch</span>
+            <span className="text-[10px] text-slate-400 underline ml-0.5">Switch</span>
           </button>
 
           {/* User Profile Info */}
-          <div className="hidden lg:flex flex-col text-right">
+          <div className="hidden lg:flex flex-col text-right border-l border-slate-800 pl-3">
             <span className="text-xs font-semibold text-slate-200">{user?.name}</span>
-            <span className="text-[10px] text-slate-400">{user?.email}</span>
+            <span className="text-[11px] text-slate-400 font-mono">{user?.email}</span>
           </div>
 
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            title="Sign out"
-            className="p-1.5 rounded text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors cursor-pointer"
+            type="button"
+            title="Sign out of AVENUE"
+            className="p-2 rounded-md text-slate-400 hover:text-rose-400 hover:bg-slate-800/60 transition-colors cursor-pointer border border-transparent hover:border-slate-700/50"
           >
             <LogOut className="w-4 h-4" />
           </button>
@@ -128,3 +135,5 @@ export const Navbar: React.FC = () => {
     </header>
   )
 }
+
+export default Navbar

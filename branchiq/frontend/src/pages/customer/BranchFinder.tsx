@@ -3,13 +3,12 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import {
   MapPin,
   Clock,
-  Sparkles,
   CheckCircle2,
   Building2,
-  AlertCircle,
   Smartphone,
   ChevronRight,
   ShieldCheck,
+  Search,
 } from 'lucide-react'
 import * as api from '../../api'
 import type { CustomerRecommendationResult, CustomerBranchView, CustomerServiceOption } from '../../types'
@@ -23,6 +22,7 @@ export const BranchFinder: React.FC = () => {
   const [selectedService, setSelectedService] = useState<string>(navState.selectedService || 'Account Opening')
   const [recommendation, setRecommendation] = useState<CustomerRecommendationResult | null>(null)
   const [allBranches, setAllBranches] = useState<CustomerBranchView[]>([])
+  const [searchTerm, setSearchTerm] = useState<string>('')
   const [isLoading, setIsLoading] = useState<boolean>(true)
 
   useEffect(() => {
@@ -58,183 +58,197 @@ export const BranchFinder: React.FC = () => {
     fetchRecommendation()
   }, [selectedService])
 
+  const filteredBranches = allBranches.filter((b) =>
+    b.branch_name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    b.city.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    b.area.toLowerCase().includes(searchTerm.toLowerCase())
+  )
+
   return (
-    <div className="min-h-screen bg-[#0e1117] text-slate-100 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
-        {/* Header with Service Selector */}
-        <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+    <div className="min-h-screen bg-[#090d16] text-slate-100">
+      <div className="w-full max-w-[1780px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-6 sm:py-8 space-y-7">
+        {/* Page Header */}
+        <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-5 bg-[#0f172a] border border-[#1e293b] rounded-xl p-5 sm:p-6 shadow-sm">
           <div>
             <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-emerald-400 uppercase">
               <MapPin className="w-3.5 h-3.5" />
-              <span>Smart Branch Recommendation</span>
+              <span>Smart Branch Locator</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
-              Find the Lowest-Wait Branch
+            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">
+              Find Optimal Branch by Service &amp; Wait Time
             </h1>
-            <p className="text-xs text-slate-400 mt-0.5">
-              Select your required service to find branches with the shortest queues and active counters
+            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+              Select your required service to find branches with the shortest estimated waiting times and available counters
             </p>
           </div>
 
-          <div className="flex items-center gap-2 bg-[#0e1117] border border-slate-700 rounded-lg px-3 py-2">
-            <span className="text-xs text-slate-400">Service:</span>
-            <select
-              value={selectedService}
-              onChange={(e) => setSelectedService(e.target.value)}
-              className="bg-transparent text-xs font-bold text-slate-200 focus:outline-none cursor-pointer"
-            >
-              {services.map((s) => (
-                <option key={s.service_id} value={s.service_type} className="bg-[#161a22]">
-                  {s.service_type}
-                </option>
-              ))}
-            </select>
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Service Selection Dropdown */}
+            <div className="flex items-center gap-2 bg-[#090d16] border border-[#1e293b] rounded-lg px-3.5 py-2">
+              <label htmlFor="service-select" className="text-xs text-slate-400 whitespace-nowrap">Service:</label>
+              <select
+                id="service-select"
+                value={selectedService}
+                onChange={(e) => setSelectedService(e.target.value)}
+                className="bg-transparent text-xs sm:text-sm font-semibold text-slate-200 focus:outline-none cursor-pointer"
+              >
+                {services.map((s) => (
+                  <option key={s.service_id} value={s.service_type} className="bg-[#0f172a]">
+                    {s.service_type}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Branch Search Filter */}
+            <div className="relative w-full sm:w-64">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+              <input
+                type="text"
+                placeholder="Filter by city or branch..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-[#090d16] border border-[#1e293b] rounded-lg pl-9 pr-3 py-2 text-xs sm:text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500/50"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Digital Availability Callout */}
-        {recommendation?.digital_available && (
-          <div className="bg-gradient-to-r from-emerald-950/60 to-slate-900 border border-emerald-500/30 rounded-xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div className="flex items-start gap-3">
-              <div className="p-2 rounded-lg bg-emerald-500/20 text-emerald-400 shrink-0">
-                <Smartphone className="w-5 h-5" />
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-emerald-400">
-                  ⚡ Online Self-Service Alternative
-                </span>
-                <p className="text-xs text-slate-200 mt-0.5 leading-relaxed">
-                  {recommendation.digital_alternative}
-                </p>
-                <span className="text-[11px] text-slate-400 mt-1 block">
-                  You can complete this service right now without visiting a branch.
-                </span>
-              </div>
-            </div>
-
-            <button
-              type="button"
-              onClick={() => navigate('/customer/assistant')}
-              className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold whitespace-nowrap cursor-pointer shadow-sm"
-            >
-              Ask Assistant
-            </button>
-          </div>
-        )}
-
-        {/* Top 3 Recommended Branches */}
-        <div>
-          <div className="flex items-center justify-between mb-3">
-            <h2 className="text-sm font-bold text-white flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-emerald-400" />
-              <span>Recommended Branches for {selectedService}</span>
-            </h2>
-            <span className="text-xs text-slate-400 font-mono">Ranked by lowest queue congestion</span>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {recommendation?.recommended_branches.map((b) => (
-              <div
-                key={b.branch_id}
-                className="bg-[#161a22] border border-emerald-500/30 rounded-xl p-5 shadow-md flex flex-col justify-between space-y-4 hover:border-emerald-500/60 transition-all relative overflow-hidden"
-              >
-                <div className="absolute top-0 right-0 bg-emerald-600/30 border-b border-l border-emerald-500/30 text-emerald-300 text-[10px] font-bold px-2 py-0.5 rounded-bl-md">
-                  Rank #{b.rank}
-                </div>
-
+        {/* AI Recommended Best Branch Card */}
+        {recommendation && recommendation.recommended_branches?.length > 0 && (() => {
+          const topBranch = recommendation.recommended_branches[0]
+          return (
+            <div className="bg-[#0f172a] border border-emerald-500/30 rounded-xl p-5 sm:p-6 shadow-sm">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
-                  <div className="flex items-center gap-2 text-xs font-mono text-emerald-400 font-bold mb-1">
-                    <span>{b.branch_id}</span>
+                  <div className="flex items-center gap-2 text-xs font-semibold text-emerald-400 uppercase tracking-wider mb-1">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Recommended Branch for {recommendation.service_type}</span>
                   </div>
-                  <h3 className="text-sm font-bold text-white">{b.branch_name}</h3>
-                  <p className="text-xs text-slate-400">{b.city} • {b.area}</p>
-
-                  <div className="mt-4 p-3 rounded-lg bg-[#0e1117] border border-slate-700/80 flex items-baseline justify-between">
-                    <div>
-                      <span className="text-[10px] uppercase font-semibold text-slate-400 block">Estimated Wait</span>
-                      <span className="text-xl font-bold font-mono text-emerald-400 mt-0.5 block">
-                        {b.estimated_wait_minutes.toFixed(1)} min
-                      </span>
-                    </div>
-
-                    <span
-                      className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
-                        b.load_status === 'Low Crowding'
-                          ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                          : 'bg-amber-500/15 text-amber-400 border-amber-500/30'
-                      }`}
-                    >
-                      {b.load_status}
-                    </span>
-                  </div>
-
-                  <p className="text-xs text-slate-300 mt-3 italic leading-relaxed">
-                    "{b.recommendation_reason}"
+                  <h2 className="text-xl sm:text-2xl font-bold text-white">
+                    {topBranch.branch_name}
+                  </h2>
+                  <p className="text-xs sm:text-sm text-slate-300 mt-1 max-w-2xl">
+                    {topBranch.recommendation_reason} &bull; {topBranch.area}, {topBranch.city}
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800 text-[11px] text-slate-400 flex items-center justify-between">
-                  <span className="flex items-center gap-1 text-emerald-400">
-                    <CheckCircle2 className="w-3.5 h-3.5" />
-                    <span>Counters Available</span>
-                  </span>
-                  <button
-                    onClick={() => navigate('/customer/assistant')}
-                    className="text-xs text-slate-300 hover:text-white underline cursor-pointer"
-                  >
-                    Get directions
-                  </button>
+                <div className="flex items-center gap-4 bg-[#090d16] border border-[#1e293b] p-4 rounded-lg">
+                  <div className="text-center px-3 border-r border-[#1e293b]">
+                    <span className="text-[11px] text-slate-400 block uppercase font-medium">Est. Wait</span>
+                    <span className="text-2xl font-bold font-mono text-emerald-400 mt-0.5 block">
+                      {topBranch.estimated_wait_minutes.toFixed(0)}m
+                    </span>
+                  </div>
+                  <div className="text-center px-3">
+                    <span className="text-[11px] text-slate-400 block uppercase font-medium">Load Status</span>
+                    <span className="text-sm font-semibold text-slate-200 mt-1 block">
+                      {topBranch.load_status}
+                    </span>
+                  </div>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
 
-        {/* All Network Branches Full Table */}
-        <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm">
-          <h2 className="text-sm font-bold text-white mb-3">All Regional Branch Wait Times</h2>
-          <div className="overflow-x-auto">
-            <table className="w-full text-left text-xs border-collapse">
-              <thead>
-                <tr className="border-b border-slate-700 text-slate-400 font-medium bg-[#11151c]">
-                  <th className="py-2.5 px-3">Branch</th>
-                  <th className="py-2.5 px-3">City / Area</th>
-                  <th className="py-2.5 px-3">Operating Hours</th>
-                  <th className="py-2.5 px-3 text-right">Counters</th>
-                  <th className="py-2.5 px-3 text-right">Estimated Wait</th>
-                  <th className="py-2.5 px-3 text-center">Crowding Level</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-slate-800 text-slate-300">
-                {allBranches.map((b) => (
-                  <tr key={b.branch_id} className="hover:bg-slate-800/40">
-                    <td className="py-2.5 px-3 font-semibold text-white">
-                      {b.branch_name} <span className="font-mono text-slate-400 text-[11px]">({b.branch_id})</span>
-                    </td>
-                    <td className="py-2.5 px-3 text-slate-400">{b.city} • {b.area}</td>
-                    <td className="py-2.5 px-3 text-slate-400 font-mono text-[11px]">{b.operating_hours}</td>
-                    <td className="py-2.5 px-3 text-right font-mono">{b.counters}</td>
-                    <td className="py-2.5 px-3 text-right font-mono font-bold text-emerald-400">
-                      {b.avg_wait_minutes.toFixed(1)}m
-                    </td>
-                    <td className="py-2.5 px-3 text-center">
+              {/* Checklist of required documents */}
+              {recommendation.documents_required?.length > 0 && (
+                <div className="mt-4 pt-4 border-t border-[#1e293b] flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-slate-400 font-medium">Required Papers:</span>
+                  {recommendation.documents_required.map((doc, idx) => (
+                    <span
+                      key={idx}
+                      className="text-xs px-2.5 py-1 rounded-md bg-[#090d16] border border-[#1e293b] text-slate-300"
+                    >
+                      &bull; {doc}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          )
+        })()}
+
+        {/* All Branches Comparison Cards (4 Columns on Desktop) */}
+        <div>
+          <div className="flex items-center justify-between mb-4">
+            <h2 className="text-base sm:text-lg font-bold text-white flex items-center gap-2">
+              <Building2 className="w-4 h-4 text-emerald-400" />
+              <span>All Branch Locations &amp; Live Wait Status</span>
+            </h2>
+            <span className="text-xs text-slate-400 font-mono">
+              {filteredBranches.length} locations available
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {filteredBranches.map((b) => {
+              const topBranchId = recommendation?.recommended_branches?.[0]?.branch_id
+              const isRecommended = topBranchId === b.branch_id
+              const isLowCrowd = b.congestion_status === 'Low Crowding'
+
+              return (
+                <div
+                  key={b.branch_id}
+                  className={`bg-[#0f172a] border rounded-xl p-5 flex flex-col justify-between transition-all ${
+                    isRecommended
+                      ? 'border-emerald-500/50 shadow-sm'
+                      : 'border-[#1e293b] hover:border-slate-700'
+                  }`}
+                >
+                  <div>
+                    <div className="flex items-center justify-between text-xs mb-2">
+                      <span className="font-mono text-emerald-400 font-semibold">{b.branch_code}</span>
                       <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
-                          b.congestion_status === 'Low Crowding'
-                            ? 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
-                            : 'bg-amber-500/15 text-amber-400 border-amber-500/30'
+                        className={`text-[10px] font-semibold px-2 py-0.5 rounded border uppercase tracking-wider ${
+                          isLowCrowd
+                            ? 'bg-emerald-500/10 text-emerald-400 border-emerald-500/25'
+                            : 'bg-amber-500/10 text-amber-400 border-amber-500/25'
                         }`}
                       >
                         {b.congestion_status}
                       </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+                    </div>
+
+                    <h3 className="text-base font-semibold text-white">{b.branch_name}</h3>
+                    <p className="text-xs text-slate-400 mt-1">{b.city} &bull; {b.area}</p>
+
+                    <div className="mt-4 space-y-2 text-xs">
+                      <div className="flex justify-between py-1 border-b border-[#1e293b]">
+                        <span className="text-slate-400">Current Wait Time:</span>
+                        <span className="font-mono font-bold text-emerald-400">
+                          {b.avg_wait_minutes.toFixed(1)} min
+                        </span>
+                      </div>
+                      <div className="flex justify-between py-1 border-b border-[#1e293b]">
+                        <span className="text-slate-400">Service Counters:</span>
+                        <span className="font-mono text-slate-200">
+                          {b.counters} active
+                        </span>
+                      </div>
+                      <div className="flex justify-between py-1">
+                        <span className="text-slate-400">Hours:</span>
+                        <span className="font-mono text-slate-300">
+                          {b.operating_hours}
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="mt-5 pt-3.5 border-t border-[#1e293b] flex items-center justify-between">
+                    <span className="text-xs text-slate-400">Load: {b.current_load_score.toFixed(0)}/100</span>
+                    {isRecommended && (
+                      <span className="text-[11px] font-semibold text-emerald-400">
+                        Top Recommendation
+                      </span>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
     </div>
   )
 }
+
+export default BranchFinder

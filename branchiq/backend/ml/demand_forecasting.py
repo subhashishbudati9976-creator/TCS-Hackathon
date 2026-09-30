@@ -1,5 +1,5 @@
 """
-Demand Forecasting Module — BranchIQ / AVENUE
+Demand Forecasting Module — AVENUE
 """
 
 from __future__ import annotations
