@@ -1,0 +1,34 @@
+version: "3.9"
+
+services:
+  backend:
+    build:
+      context: ./branchiq/backend
+      dockerfile: Dockerfile
+    container_name: branchiq-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=development
+      - APP_VERSION=0.1.0
+      - DATABASE_URL=sqlite:///./branchiq.db
+      - ALLOWED_ORIGINS=http://localhost:5173
+    volumes:
+      - ./branchiq/backend:/app
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: ./branchiq/frontend
+      dockerfile: Dockerfile
+    container_name: branchiq-frontend
+    ports:
+      - "5173:5173"
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+# NOTE: docker-compose is provided for future use.
+# For hackathon development, run frontend and backend directly (see README).
