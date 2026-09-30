@@ -1,12 +1,10 @@
 """
 Simulation engine routes.
-
-Placeholder: route is registered but simulation logic is not yet implemented.
 """
 
 from fastapi import APIRouter
-
-from app.schemas import SimulationRequest, SimulationResult
+from app.schemas.schemas import SimulationRequest, SimulationResult
+from ml.simulation_engine import simulate_scenario
 
 router = APIRouter(prefix="/api/simulate", tags=["simulation"])
 
@@ -16,13 +14,15 @@ router = APIRouter(prefix="/api/simulate", tags=["simulation"])
     response_model=SimulationResult,
     summary="Simulate the impact of an operational action",
 )
-async def run_simulation(request: SimulationRequest) -> dict:
+async def run_simulation(request: SimulationRequest):
     """
-    Simulates the expected outcome of applying a recommended action.
-    NOT YET IMPLEMENTED — simulation engine will be wired here in a later step.
+    Simulates the expected outcome of changing staffing, demand surges,
+    and counter allocations using queueing models.
     """
-    return {
-        "scenario_id": "not_implemented",
-        "before": {},
-        "after": {},
-    }
+    return simulate_scenario(
+        branch_code=request.branch_code,
+        staff_count=request.staff_count,
+        demand_multiplier=request.demand_multiplier,
+        active_counters=request.active_counters,
+        cross_trained_reallocated=request.cross_trained_reallocated,
+    )

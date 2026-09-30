@@ -1,0 +1,25 @@
+staff_id,name,branch_code,primary_role,is_cross_trained,shift,status
+STF-AV-CENTRAL-1,Emily Davis,AV-CENTRAL,Teller,True,08:30 - 17:30,Available
+STF-AV-CENTRAL-2,Marcus Vance,AV-CENTRAL,Customer Service Specialist,True,08:30 - 17:30,Available
+STF-AV-CENTRAL-3,Sarah Jenkins,AV-CENTRAL,Loan Officer,False,08:30 - 17:30,Break/Consult
+STF-AV-CENTRAL-4,Robert Lee,AV-CENTRAL,KYC Officer,True,08:30 - 17:30,Available
+STF-AV-CENTRAL-5,David Miller,AV-CENTRAL,Teller,False,08:30 - 17:30,Available
+STF-AV-CENTRAL-6,Sophia Ramirez,AV-CENTRAL,Branch Greeter,False,08:30 - 17:30,Available
+STF-AV-CENTRAL-7,Alex Turner,AV-CENTRAL,Wealth Advisor,False,08:30 - 17:30,Available
+STF-AV-CENTRAL-8,Rachel Green,AV-CENTRAL,Teller,True,08:30 - 17:30,Available
+STF-AV-NORTH-1,Emily Davis,AV-NORTH,Teller,True,08:30 - 17:30,Available
+STF-AV-NORTH-2,Marcus Vance,AV-NORTH,Customer Service Specialist,True,08:30 - 17:30,Available
+STF-AV-NORTH-3,Sarah Jenkins,AV-NORTH,Loan Officer,False,08:30 - 17:30,Break/Consult
+STF-AV-NORTH-4,Robert Lee,AV-NORTH,KYC Officer,True,08:30 - 17:30,Available
+STF-AV-NORTH-5,David Miller,AV-NORTH,Teller,False,08:30 - 17:30,Available
+STF-AV-NORTH-6,Sophia Ramirez,AV-NORTH,Branch Greeter,False,08:30 - 17:30,Available
+STF-AV-NORTH-7,Alex Turner,AV-NORTH,Wealth Advisor,False,08:30 - 17:30,Available
+STF-AV-NORTH-8,Rachel Green,AV-NORTH,Teller,True,08:30 - 17:30,Available
+STF-AV-WEST-1,Emily Davis,AV-WEST,Teller,True,08:30 - 17:30,Available
+STF-AV-WEST-2,Marcus Vance,AV-WEST,Customer Service Specialist,True,08:30 - 17:30,Available
+STF-AV-WEST-3,Sarah Jenkins,AV-WEST,Loan Officer,False,08:30 - 17:30,Break/Consult
+STF-AV-WEST-4,Robert Lee,AV-WEST,KYC Officer,True,08:30 - 17:30,Available
+STF-AV-WEST-5,David Miller,AV-WEST,Teller,False,08:30 - 17:30,Available
+STF-AV-WEST-6,Sophia Ramirez,AV-WEST,Branch Greeter,False,08:30 - 17:30,Available
+STF-AV-WEST-7,Alex Turner,AV-WEST,Wealth Advisor,False,08:30 - 17:30,Available
+STF-AV-WEST-8,Rachel Green,AV-WEST,Teller,True,08:30 - 17:30,Available

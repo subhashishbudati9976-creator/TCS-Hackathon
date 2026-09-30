@@ -1,22 +1,22 @@
 """
 Health check route.
 
-GET /api/health — returns service status.
+GET /api/health and GET /health — returns service status.
 """
 
 from fastapi import APIRouter
-
 from app.config import settings
 from app.schemas import HealthResponse
 
-router = APIRouter(prefix="/api", tags=["health"])
+router = APIRouter(tags=["health"])
 
 
 @router.get("/health", response_model=HealthResponse, summary="Health check")
+@router.get("/api/health", response_model=HealthResponse, summary="Health check (api prefix)")
 async def health_check() -> HealthResponse:
-    """Returns a simple JSON payload confirming the backend is running."""
+    """Returns a JSON payload confirming AVENUE API service is running."""
     return HealthResponse(
         status="ok",
-        service="BranchIQ API",
+        service="AVENUE Intelligent Optimizer API",
         version=settings.app_version,
     )
