@@ -1,4 +1,4 @@
-# BranchIQ — Intelligent Branch Service Load & Customer Experience Optimizer
+# AVENUE — Intelligent Branch Service Load & Customer Experience Optimizer
 
 > **TCS Hackathon Project**
 
