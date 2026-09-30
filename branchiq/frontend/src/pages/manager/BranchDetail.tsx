@@ -11,6 +11,9 @@ import {
   ShieldCheck,
   CheckCircle2,
   Sliders,
+  Sparkles,
+  Activity,
+  Cpu,
 } from 'lucide-react'
 import {
   ResponsiveContainer,
@@ -53,10 +56,10 @@ export const BranchDetail: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#0e1117] flex items-center justify-center p-8">
+      <div className="min-h-screen avenue-mesh-bg flex items-center justify-center p-8">
         <div className="text-center">
-          <div className="w-10 h-10 border-2 border-emerald-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
-          <p className="text-xs text-slate-400">Loading comprehensive branch intelligence...</p>
+          <div className="w-12 h-12 border-3 border-cyan-500 border-t-transparent rounded-full animate-spin mx-auto mb-3" />
+          <p className="text-xs font-mono text-cyan-400">Loading comprehensive branch telemetry...</p>
         </div>
       </div>
     )
@@ -64,7 +67,7 @@ export const BranchDetail: React.FC = () => {
 
   if (error || !data) {
     return (
-      <div className="min-h-screen bg-[#0e1117] p-8 text-slate-200">
+      <div className="min-h-screen avenue-mesh-bg p-8 text-slate-200">
         <button
           onClick={() => navigate('/manager/branches')}
           className="flex items-center gap-1.5 text-xs text-slate-400 hover:text-white mb-6 cursor-pointer"
@@ -72,7 +75,7 @@ export const BranchDetail: React.FC = () => {
           <ArrowLeft className="w-4 h-4" />
           <span>Back to Branches</span>
         </button>
-        <div className="p-6 bg-rose-500/15 border border-rose-500/30 rounded-xl text-rose-300 text-sm">
+        <div className="p-6 bg-rose-500/15 border border-rose-500/30 rounded-2xl text-rose-300 text-sm">
           {error ?? 'Branch not found'}
         </div>
       </div>
@@ -93,13 +96,15 @@ export const BranchDetail: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0e1117] text-slate-100 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen avenue-mesh-bg text-slate-100 p-4 sm:p-6 lg:p-8 relative">
+      <div className="cyber-grid absolute inset-0 opacity-25 pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         {/* Navigation Back */}
         <div className="flex items-center justify-between">
           <button
             onClick={() => navigate('/manager/branches')}
-            className="flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-emerald-400 transition-colors cursor-pointer"
+            className="flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-cyan-400 transition-colors cursor-pointer"
           >
             <ArrowLeft className="w-4 h-4" />
             <span>Back to Branch Comparison</span>
@@ -107,51 +112,51 @@ export const BranchDetail: React.FC = () => {
 
           <button
             onClick={() => navigate('/manager/simulation', { state: { branchId } })}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-xs font-semibold text-white shadow-sm cursor-pointer"
+            className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-gradient-to-r from-cyan-600 via-blue-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-xs font-bold text-white shadow-md shadow-cyan-600/20 cursor-pointer"
           >
             <Sliders className="w-3.5 h-3.5" />
-            <span>Simulate Scenarios</span>
+            <span>Launch Digital Twin Sandbox</span>
           </button>
         </div>
 
         {/* Branch Header */}
-        <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-6 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="avenue-glass rounded-2xl p-6 shadow-2xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-cyan-500/20">
           <div>
             <div className="flex items-center gap-2">
-              <span className="font-mono text-xs font-bold px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+              <span className="font-mono text-xs font-bold px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-300 border border-cyan-500/30">
                 {summary.branch.branch_code ?? branchId}
               </span>
-              <span className="text-xs text-slate-400 font-medium">{summary.branch.branch_type}</span>
+              <span className="text-xs text-slate-400 font-medium font-mono">{summary.branch.branch_type}</span>
             </div>
-            <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white mt-1">
+            <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-white mt-1">
               {summary.branch.branch_name}
             </h1>
-            <p className="text-xs text-slate-400 mt-1">
-              {summary.branch.city} • Counters: {summary.branch.number_of_counters} • Total Staff: {summary.metrics.total_staff}
+            <p className="text-xs text-slate-400 mt-1 font-mono">
+              {summary.branch.city} • Counters: <strong className="text-slate-200">{summary.branch.number_of_counters}</strong> • Total Staff: <strong className="text-slate-200">{summary.metrics.total_staff}</strong>
             </p>
           </div>
 
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-[#0e1117] border border-slate-700 rounded-lg text-center min-w-[100px]">
-              <span className="text-[10px] text-slate-400 uppercase font-semibold block">Load Score</span>
-              <span className="text-xl font-bold font-mono text-white mt-0.5 block">
+          <div className="flex items-center gap-3">
+            <div className="p-3.5 bg-slate-900/90 border border-slate-700/80 rounded-xl text-center min-w-[110px] shadow-sm">
+              <span className="text-[10px] text-slate-400 uppercase font-mono font-bold block">Load Score</span>
+              <span className="text-xl font-black font-mono text-cyan-300 mt-0.5 block">
                 {loadScore.overall_load_score.toFixed(0)}/100
               </span>
-              <span className="text-[10px] text-amber-400 font-semibold">{loadScore.risk_level}</span>
+              <span className="badge badge-moderate text-[9px] mt-1">{loadScore.risk_level}</span>
             </div>
 
-            <div className="p-3 bg-[#0e1117] border border-slate-700 rounded-lg text-center min-w-[100px]">
-              <span className="text-[10px] text-slate-400 uppercase font-semibold block">Avg Wait</span>
-              <span className="text-xl font-bold font-mono text-emerald-400 mt-0.5 block">
+            <div className="p-3.5 bg-slate-900/90 border border-slate-700/80 rounded-xl text-center min-w-[110px] shadow-sm">
+              <span className="text-[10px] text-slate-400 uppercase font-mono font-bold block">Avg Wait</span>
+              <span className="text-xl font-black font-mono text-emerald-400 mt-0.5 block">
                 {summary.metrics.avg_waiting_time_minutes.toFixed(1)}m
               </span>
-              <span className="text-[10px] text-slate-500">P90: {summary.metrics.p90_waiting_time_minutes.toFixed(1)}m</span>
+              <span className="text-[10px] text-slate-400 font-mono">P90: {summary.metrics.p90_waiting_time_minutes.toFixed(1)}m</span>
             </div>
           </div>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex border-b border-slate-700 gap-6 text-xs font-semibold">
+        <div className="flex border-b border-slate-800 gap-6 text-xs font-bold">
           {[
             { id: 'overview', label: 'Capacity & Workload' },
             { id: 'forecast', label: 'Demand Forecast' },
@@ -161,9 +166,9 @@ export const BranchDetail: React.FC = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id as any)}
-              className={`pb-3 transition-colors cursor-pointer border-b-2 ${
+              className={`pb-3 transition-all cursor-pointer border-b-2 font-mono ${
                 activeTab === tab.id
-                  ? 'border-emerald-500 text-emerald-400 font-bold'
+                  ? 'border-cyan-400 text-cyan-300 font-extrabold'
                   : 'border-transparent text-slate-400 hover:text-slate-200'
               }`}
             >
@@ -175,44 +180,44 @@ export const BranchDetail: React.FC = () => {
         {/* Tab 1: Overview & Capacity Breakdown */}
         {activeTab === 'overview' && (
           <div className="space-y-6">
-            <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm">
+            <div className="avenue-glass rounded-2xl p-5 shadow-xl">
               <h2 className="text-sm font-bold text-white mb-3 flex items-center gap-2">
-                <Users className="w-4 h-4 text-emerald-400" />
+                <Users className="w-4 h-4 text-cyan-400" />
                 <span>Service Capacity & Skill Breakdown</span>
               </h2>
 
               <div className="overflow-x-auto">
-                <table className="w-full text-left text-xs border-collapse">
+                <table className="data-table">
                   <thead>
-                    <tr className="border-b border-slate-700 text-slate-400 font-medium bg-[#11151c]">
-                      <th className="py-2.5 px-3">Service</th>
-                      <th className="py-2.5 px-3">Skill Group</th>
-                      <th className="py-2.5 px-3 text-right">Staff Assigned</th>
-                      <th className="py-2.5 px-3 text-right">Workload (min)</th>
-                      <th className="py-2.5 px-3 text-right">Capacity (min)</th>
-                      <th className="py-2.5 px-3 text-right">Utilization</th>
-                      <th className="py-2.5 px-3 text-center">Status</th>
+                    <tr>
+                      <th>Service Category</th>
+                      <th>Skill Group</th>
+                      <th className="text-right">Staff Assigned</th>
+                      <th className="text-right">Workload (min)</th>
+                      <th className="text-right">Capacity (min)</th>
+                      <th className="text-right">Utilization</th>
+                      <th className="text-center">Status</th>
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-800 text-slate-300">
+                  <tbody>
                     {capacity.service_capacity_breakdown.map((s) => (
                       <tr key={s.service_type} className="hover:bg-slate-800/40">
-                        <td className="py-2.5 px-3 font-semibold text-white">{s.service_type}</td>
-                        <td className="py-2.5 px-3 text-slate-400">{s.required_skill}</td>
-                        <td className="py-2.5 px-3 text-right font-mono">{s.assigned_staff_count.toFixed(1)}</td>
-                        <td className="py-2.5 px-3 text-right font-mono">{Math.round(s.workload_minutes)}</td>
-                        <td className="py-2.5 px-3 text-right font-mono">{Math.round(s.capacity_minutes)}</td>
-                        <td className="py-2.5 px-3 text-right font-mono font-semibold text-white">
+                        <td className="font-semibold text-white">{s.service_type}</td>
+                        <td className="text-slate-400">{s.required_skill}</td>
+                        <td className="text-right font-mono">{s.assigned_staff_count.toFixed(1)}</td>
+                        <td className="text-right font-mono">{Math.round(s.workload_minutes)}</td>
+                        <td className="text-right font-mono">{Math.round(s.capacity_minutes)}</td>
+                        <td className="text-right font-mono font-bold text-white">
                           {(s.utilization_rate * 100).toFixed(0)}%
                         </td>
-                        <td className="py-2.5 px-3 text-center">
+                        <td className="text-center">
                           <span
-                            className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
+                            className={`badge ${
                               s.bottleneck_severity === 'Critical'
-                                ? 'bg-rose-500/20 text-rose-400 border-rose-500/40'
+                                ? 'badge-critical'
                                 : s.bottleneck_severity === 'High'
-                                ? 'bg-amber-500/20 text-amber-400 border-amber-500/40'
-                                : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                                ? 'badge-high'
+                                : 'badge-normal'
                             }`}
                           >
                             {s.bottleneck_severity}
@@ -229,29 +234,35 @@ export const BranchDetail: React.FC = () => {
 
         {/* Tab 2: Forecast */}
         {activeTab === 'forecast' && (
-          <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm space-y-4">
+          <div className="avenue-glass rounded-2xl p-5 shadow-xl space-y-4">
             <h2 className="text-sm font-bold text-white flex items-center gap-2">
-              <TrendingUp className="w-4 h-4 text-emerald-400" />
+              <TrendingUp className="w-4 h-4 text-cyan-400" />
               <span>XGBoost Hourly Demand Forecast</span>
             </h2>
 
             <div className="h-72 w-full">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart data={forecast.forecast} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#2d3748" vertical={false} />
-                  <XAxis dataKey="hour" stroke="#718096" fontSize={11} tickFormatter={(h) => `${h}:00`} />
-                  <YAxis stroke="#718096" fontSize={11} />
+                  <defs>
+                    <linearGradient id="detailDemandGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="5%" stopColor="#06b6d4" stopOpacity={0.45} />
+                      <stop offset="95%" stopColor="#06b6d4" stopOpacity={0.0} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(51,65,85,0.4)" vertical={false} />
+                  <XAxis dataKey="hour" stroke="#94a3b8" fontSize={11} tickFormatter={(h) => `${h}:00`} />
+                  <YAxis stroke="#94a3b8" fontSize={11} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: '#1a202c', borderColor: '#4a5568', borderRadius: '8px', fontSize: '12px' }}
+                    contentStyle={{ backgroundColor: 'rgba(11,18,33,0.95)', borderColor: 'rgba(6,182,212,0.4)', borderRadius: '10px', fontSize: '12px' }}
                     labelFormatter={(h) => `Operating Hour: ${h}:00`}
                   />
                   <Area
                     type="monotone"
                     dataKey="predicted_demand"
-                    stroke="#10b981"
+                    stroke="#06b6d4"
                     strokeWidth={2.5}
-                    fill="#10b981"
-                    fillOpacity={0.25}
+                    fillOpacity={1}
+                    fill="url(#detailDemandGrad)"
                   />
                 </AreaChart>
               </ResponsiveContainer>
@@ -262,7 +273,7 @@ export const BranchDetail: React.FC = () => {
         {/* Tab 3: Bottlenecks & Recommendations */}
         {activeTab === 'bottlenecks' && (
           <div className="space-y-6">
-            <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm">
+            <div className="avenue-glass rounded-2xl p-5 shadow-xl">
               <h2 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
                 <AlertTriangle className="w-4 h-4 text-amber-400" />
                 <span>Detected Service Bottlenecks & Root Causes</span>
@@ -270,31 +281,31 @@ export const BranchDetail: React.FC = () => {
 
               <div className="space-y-3">
                 {bottlenecks.map((b) => (
-                  <div key={b.service} className="p-4 rounded-lg bg-[#0e1117] border border-slate-700/80">
+                  <div key={b.service} className="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <div>
                         <div className="flex items-center gap-2">
                           <span className="text-xs font-bold text-white">{b.service}</span>
                           <span
-                            className={`text-[10px] font-bold px-2 py-0.5 rounded border ${
-                              b.severity === 'CRITICAL' ? 'bg-rose-500/20 text-rose-400 border-rose-500/40' : 'bg-emerald-500/15 text-emerald-400 border-emerald-500/30'
+                            className={`badge ${
+                              b.severity === 'CRITICAL' ? 'badge-critical' : 'badge-normal'
                             }`}
                           >
                             {b.severity}
                           </span>
                         </div>
-                        <span className="text-[11px] text-slate-400 mt-1 block">
+                        <span className="text-[11px] text-slate-400 mt-1 block font-mono">
                           Peak Time: {b.time} • Utilization: {(b.utilization * 100).toFixed(0)}% • Est Wait: {b.estimated_wait_minutes.toFixed(1)}m
                         </span>
                       </div>
 
                       <div className="text-right">
-                        <span className="text-[11px] text-slate-400">Demand / Capacity:</span>
-                        <span className="font-mono text-xs font-bold text-white ml-1.5">{b.predicted_demand} / {b.capacity}</span>
+                        <span className="text-[11px] text-slate-400 font-mono">Demand / Capacity:</span>
+                        <span className="font-mono text-xs font-bold text-cyan-300 ml-1.5">{b.predicted_demand} / {b.capacity}</span>
                       </div>
                     </div>
 
-                    <div className="mt-3 pt-2.5 border-t border-slate-800">
+                    <div className="mt-3 pt-2.5 border-t border-slate-800/80">
                       <span className="text-[11px] font-semibold text-slate-400 block mb-1">Root Cause Attribution:</span>
                       <ul className="list-disc list-inside text-xs text-slate-300 space-y-0.5">
                         {b.root_causes.map((rc, i) => (
@@ -308,32 +319,32 @@ export const BranchDetail: React.FC = () => {
             </div>
 
             {/* Recommendations */}
-            <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm">
+            <div className="avenue-glass rounded-2xl p-5 shadow-xl">
               <h2 className="text-sm font-bold text-white mb-4 flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                <span>Intervention Recommendations</span>
+                <span>Prescriptive Recommendations</span>
               </h2>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {recommendations.map((rec) => (
-                  <div key={rec.id} className="p-4 rounded-lg bg-[#0e1117] border border-slate-700/80 flex flex-col justify-between">
+                  <div key={rec.id} className="p-4 rounded-xl bg-slate-900/80 border border-slate-800 flex flex-col justify-between shadow-sm">
                     <div>
                       <div className="flex items-center justify-between mb-2">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-500/15 text-amber-400 border border-amber-500/30">
+                        <span className={`badge ${rec.priority === 'HIGH' ? 'badge-critical' : 'badge-moderate'}`}>
                           {rec.priority} PRIORITY
                         </span>
-                        <span className="text-[10px] font-mono text-slate-500">{rec.type}</span>
+                        <span className="text-[10px] font-mono text-slate-500 uppercase">{rec.type}</span>
                       </div>
                       <h3 className="text-xs font-bold text-white">{rec.action}</h3>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">{rec.reason}</p>
                     </div>
 
                     <div className="mt-4 pt-3 border-t border-slate-800 flex items-center justify-between">
-                      <span className="text-[11px] text-emerald-400">{rec.expected_operational_effect}</span>
+                      <span className="text-[11px] text-cyan-400 font-medium">{rec.expected_operational_effect}</span>
                       {rec.simulatable && (
                         <button
                           onClick={() => handleSimulate(rec)}
-                          className="px-2.5 py-1 rounded bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold cursor-pointer"
+                          className="px-3 py-1.5 rounded-lg bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-500 hover:to-blue-500 text-white text-xs font-bold shadow-sm cursor-pointer"
                         >
                           Simulate
                         </button>
@@ -350,17 +361,17 @@ export const BranchDetail: React.FC = () => {
         {activeTab === 'feedback' && (
           <div className="space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="p-4 bg-[#161a22] border border-[#2d3748] rounded-xl text-center">
+              <div className="p-5 avenue-glass rounded-xl text-center">
                 <span className="text-xs text-slate-400">Total Customer Reviews</span>
                 <span className="text-2xl font-bold font-mono text-white block mt-1">{feedback.total_feedback}</span>
               </div>
-              <div className="p-4 bg-[#161a22] border border-[#2d3748] rounded-xl text-center">
+              <div className="p-5 avenue-glass rounded-xl text-center">
                 <span className="text-xs text-slate-400">Satisfaction Rate</span>
                 <span className="text-2xl font-bold font-mono text-emerald-400 block mt-1">
                   {feedback.sentiment_percentages.Positive}%
                 </span>
               </div>
-              <div className="p-4 bg-[#161a22] border border-[#2d3748] rounded-xl text-center">
+              <div className="p-5 avenue-glass rounded-xl text-center">
                 <span className="text-xs text-slate-400">Average Rating</span>
                 <span className="text-2xl font-bold font-mono text-amber-400 block mt-1">
                   {feedback.average_rating.toFixed(1)} / 5.0
@@ -369,14 +380,14 @@ export const BranchDetail: React.FC = () => {
             </div>
 
             {/* Recent Feedback Feed */}
-            <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm">
+            <div className="avenue-glass rounded-2xl p-5 shadow-xl">
               <h2 className="text-sm font-bold text-white mb-3">Recent Customer Comments</h2>
               <div className="space-y-3">
                 {feedback.recent_feedback.slice(0, 8).map((f) => (
-                  <div key={f.feedback_id} className="p-3 bg-[#0e1117] border border-slate-800 rounded-lg text-xs">
-                    <div className="flex items-center justify-between text-slate-400 mb-1 text-[11px]">
+                  <div key={f.feedback_id} className="p-3.5 bg-slate-900/80 border border-slate-800 rounded-xl text-xs">
+                    <div className="flex items-center justify-between text-slate-400 mb-1 text-[11px] font-mono">
                       <span>{f.service_type} • Rating: {'★'.repeat(f.rating)}</span>
-                      <span className={f.sentiment === 'Positive' ? 'text-emerald-400' : 'text-rose-400 font-semibold'}>
+                      <span className={f.sentiment === 'Positive' ? 'text-emerald-400 font-bold' : 'text-rose-400 font-bold'}>
                         {f.sentiment}
                       </span>
                     </div>
