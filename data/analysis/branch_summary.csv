@@ -1,0 +1,11 @@
+branch_id,total_visits,avg_waiting_time,median_waiting_time,p90_waiting_time,max_waiting_time,total_workload_minutes,abandoned_visits,appointments_handled,branch_code,branch_name,city,area,latitude,longitude,branch_capacity,number_of_counters,operating_hours,branch_type,baseline_traffic_level,traffic_multiplier,abandonment_rate_pct,total_workload_hours
+BR001,11077,3.18,2.2,3.4,64.4,135783.5,44,1345,METRO-01,Metro Central Flagship,Bengaluru,MG Road / CBD,12.9716,77.5946,120,14,09:30-16:30,Flagship / Business District,High,1.45,0.4,2263.1
+BR003,10415,3.6,2.3,3.5,64.9,112518.2,64,1261,TRD-03,Old Town Commercial Hub,Bengaluru,Chickpet Market,12.9698,77.575,100,12,09:30-16:30,Commercial / Wholesale Market,High,1.35,0.61,1875.3
+BR002,9964,4.62,2.4,10.1,65.0,121821.1,106,1249,TECH-02,Tech Corridor Cyber Branch,Bengaluru,Electronic City,12.8399,77.677,90,10,09:30-16:30,Urban Commercial / Tech Hub,High,1.3,1.06,2030.4
+BR009,8801,4.94,2.4,10.7,64.9,106472.7,136,1036,IND-09,Industrial Township Branch,Bengaluru,Peenya Industrial Area,13.0285,77.5197,85,9,09:00-16:30,Industrial & Remittance Hub,Medium,1.15,1.55,1774.5
+BR006,8124,5.39,2.4,14.7,64.9,111688.4,113,964,CORP-06,Westside Business Park,Bengaluru,Whitefield,12.9698,77.75,75,8,09:30-16:30,Corporate MSME Hub,Medium,1.05,1.39,1861.5
+BR007,7626,4.93,2.4,10.8,64.9,92440.7,107,912,MKT-07,Eastend Market Junction,Bengaluru,Indiranagar,12.9784,77.6408,70,8,09:30-16:30,High-Street Retail,Medium,1.0,1.4,1540.7
+BR004,7274,6.03,2.4,16.27,64.9,87848.9,187,876,SUB-04,Green Valley Suburban Branch,Bengaluru,Jayanagar Residential,12.9308,77.5838,60,7,09:30-16:30,Suburban Retail / Residential,Medium,0.95,2.57,1464.1
+BR005,6113,7.34,2.6,24.3,64.9,73153.6,205,710,CAMP-05,University Campus Branch,Bengaluru,Jnana Bharati Campus,12.9465,77.5028,50,5,10:00-16:00,Institutional / University,Medium,0.8,3.35,1219.2
+BR008,5187,4.73,2.4,10.44,64.9,67117.6,72,601,PRM-08,Northern Heights Wealth Centre,Bengaluru,Sadashivanagar,13.0068,77.5813,45,6,09:30-16:30,Affluent Residential / Wealth,Low,0.7,1.39,1118.6
+BR010,4947,6.12,2.4,17.0,65.0,59368.0,114,579,EXP-10,Airport Expressway Branch,Bengaluru,Hebbal Outer Ring,13.0358,77.597,40,5,09:00-17:00,Transit / Express Branch,Low,0.65,2.3,989.5

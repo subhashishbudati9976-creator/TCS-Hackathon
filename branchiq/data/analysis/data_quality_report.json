@@ -1,0 +1,94 @@
+{
+  "timestamp": "2026-09-30T12:54:31.246120",
+  "data_directory": "C:\\CSE Next-Gen Computational Intelligence\\Google Antigravity\\TCS Hackathon\\data\\processed",
+  "overall_status": "FAIL",
+  "total_checks": 10,
+  "passed_checks": 8,
+  "failed_checks": 2,
+  "warnings": [],
+  "checks": {
+    "check_1_missing_values": {
+      "description": "Verify no missing/null values exist in required fields",
+      "passed": false,
+      "total_missing_cells": 264,
+      "details": {
+        "calendar": {
+          "holiday_name": 132,
+          "holiday_type": 132
+        }
+      }
+    },
+    "check_2_timestamp_chronology": {
+      "description": "Ensure arrival_timestamp <= service_start <= service_end",
+      "passed": true,
+      "arrival_after_start_count": 0,
+      "start_after_end_count": 0
+    },
+    "check_3_service_durations": {
+      "description": "Ensure non-negative durations and non-zero durations for completed visits",
+      "passed": true,
+      "negative_duration_count": 0,
+      "completed_with_zero_duration": 0
+    },
+    "check_4_waiting_times": {
+      "description": "Validate non-negative and physically plausible waiting times (<= 240 min) and timestamp agreement",
+      "passed": false,
+      "negative_waiting_times": 0,
+      "excessive_waiting_times": 304,
+      "inconsistent_waiting_times": 0
+    },
+    "check_5_duplicate_identifiers": {
+      "description": "Ensure uniqueness across all primary keys",
+      "passed": true,
+      "total_duplicates": 0,
+      "details": {
+        "branches": 0,
+        "services": 0,
+        "staff": 0,
+        "customers": 0,
+        "calendar": 0,
+        "appointments": 0,
+        "visits": 0,
+        "queue_data": 0,
+        "feedback": 0
+      }
+    },
+    "check_6_referential_integrity": {
+      "description": "Verify foreign key consistency across tables",
+      "passed": true,
+      "orphan_records_count": 0,
+      "details": {
+        "staff_invalid_branch": 0,
+        "visits_invalid_branch": 0,
+        "visits_invalid_customer": 0,
+        "visits_invalid_staff": 0,
+        "queue_invalid_visit": 0,
+        "feedback_invalid_customer": 0
+      }
+    },
+    "check_7_skill_consistency": {
+      "description": "Ensure served visits are handled by staff with matching or cross-trained skills",
+      "passed": true,
+      "sample_size": 5000,
+      "mismatches_in_sample": 126,
+      "compliance_rate_pct": 97.48
+    },
+    "check_8_appointment_validity": {
+      "description": "Verify appointments are scheduled during operational banking days",
+      "passed": true,
+      "appointments_on_holidays_count": 0
+    },
+    "check_9_capacity_engine_bounds": {
+      "description": "Ensure zero-division safety, valid utilization ratios, and bounded 0-100 load scores",
+      "passed": true,
+      "zero_div_handled": true,
+      "sample_score": 45.04,
+      "sample_risk": "Moderate"
+    },
+    "check_10_qa_report_generation": {
+      "description": "Compile full automated QA audit summary",
+      "passed": true,
+      "overall_status": "FAIL"
+    }
+  }
+}

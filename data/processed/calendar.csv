@@ -1,0 +1,181 @@
+date,day_of_week,is_weekend,is_holiday,holiday_name,holiday_type,is_salary_period,is_month_start,is_month_end,seasonal_period,local_event_flag,event_impact_factor
+2025-10-01,Wednesday,0,0,Regular Banking Day,Working Day,1,1,0,Festive Season,0,1.0
+2025-10-02,Thursday,0,1,Gandhi Jayanti,National,1,1,0,Festive Season,0,1.0
+2025-10-03,Friday,0,0,Regular Banking Day,Working Day,1,1,0,Festive Season,0,1.0
+2025-10-04,Saturday,0,0,Regular Banking Day,Working Day,1,0,0,Festive Season,0,1.0
+2025-10-05,Sunday,1,1,Sunday,Weekend,1,0,0,Festive Season,0,1.0
+2025-10-06,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-07,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-08,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-09,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-10,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-11,Saturday,1,1,2th Saturday,Weekend,0,0,0,Festive Season,0,1.0
+2025-10-12,Sunday,1,1,Sunday,Weekend,0,0,0,Festive Season,0,1.0
+2025-10-13,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-14,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-15,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-16,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-17,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-18,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-19,Sunday,1,1,Sunday,Weekend,0,0,0,Festive Season,0,1.0
+2025-10-20,Monday,0,1,Diwali / Deepavali,Festival,0,0,0,Festive Season,0,1.0
+2025-10-21,Tuesday,0,1,Diwali Balipadyami,Festival,0,0,0,Festive Season,0,1.0
+2025-10-22,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-23,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-24,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-10-25,Saturday,1,1,4th Saturday,Weekend,0,0,0,Festive Season,0,1.0
+2025-10-26,Sunday,1,1,Sunday,Weekend,0,0,1,Festive Season,0,1.0
+2025-10-27,Monday,0,0,Regular Banking Day,Working Day,0,0,1,Festive Season,0,1.0
+2025-10-28,Tuesday,0,0,Regular Banking Day,Working Day,1,0,1,Festive Season,0,1.0
+2025-10-29,Wednesday,0,0,Regular Banking Day,Working Day,1,0,1,Festive Season,0,1.0
+2025-10-30,Thursday,0,0,Regular Banking Day,Working Day,1,0,1,Festive Season,0,1.0
+2025-10-31,Friday,0,0,Regular Banking Day,Working Day,1,0,1,Festive Season,0,1.0
+2025-11-01,Saturday,0,1,Kannada Rajyotsava,Regional,1,1,0,Festive Season,0,1.0
+2025-11-02,Sunday,1,1,Sunday,Weekend,1,1,0,Festive Season,0,1.0
+2025-11-03,Monday,0,0,Regular Banking Day,Working Day,1,1,0,Festive Season,0,1.0
+2025-11-04,Tuesday,0,0,Regular Banking Day,Working Day,1,0,0,Festive Season,0,1.0
+2025-11-05,Wednesday,0,0,Regular Banking Day,Working Day,1,0,0,Festive Season,0,1.0
+2025-11-06,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-07,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-08,Saturday,1,1,2th Saturday,Weekend,0,0,0,Festive Season,0,1.0
+2025-11-09,Sunday,1,1,Sunday,Weekend,0,0,0,Festive Season,0,1.0
+2025-11-10,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,1,1.25
+2025-11-11,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-12,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-13,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-14,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-15,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-16,Sunday,1,1,Sunday,Weekend,0,0,0,Festive Season,0,1.0
+2025-11-17,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-18,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-19,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-20,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-21,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-22,Saturday,1,1,4th Saturday,Weekend,0,0,0,Festive Season,0,1.0
+2025-11-23,Sunday,1,1,Sunday,Weekend,0,0,0,Festive Season,0,1.0
+2025-11-24,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,1,1.25
+2025-11-25,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Festive Season,0,1.0
+2025-11-26,Wednesday,0,0,Regular Banking Day,Working Day,0,0,1,Festive Season,0,1.0
+2025-11-27,Thursday,0,0,Regular Banking Day,Working Day,0,0,1,Festive Season,0,1.0
+2025-11-28,Friday,0,0,Regular Banking Day,Working Day,1,0,1,Festive Season,0,1.0
+2025-11-29,Saturday,0,0,Regular Banking Day,Working Day,1,0,1,Festive Season,0,1.0
+2025-11-30,Sunday,1,1,Sunday,Weekend,1,0,1,Festive Season,0,1.0
+2025-12-01,Monday,0,0,Regular Banking Day,Working Day,1,1,0,Regular Operations,0,1.0
+2025-12-02,Tuesday,0,0,Regular Banking Day,Working Day,1,1,0,Regular Operations,0,1.0
+2025-12-03,Wednesday,0,0,Regular Banking Day,Working Day,1,1,0,Regular Operations,0,1.0
+2025-12-04,Thursday,0,0,Regular Banking Day,Working Day,1,0,0,Regular Operations,0,1.0
+2025-12-05,Friday,0,0,Regular Banking Day,Working Day,1,0,0,Regular Operations,0,1.0
+2025-12-06,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-07,Sunday,1,1,Sunday,Weekend,0,0,0,Regular Operations,0,1.0
+2025-12-08,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,1,1.25
+2025-12-09,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-10,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-11,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-12,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-13,Saturday,1,1,2th Saturday,Weekend,0,0,0,Regular Operations,0,1.0
+2025-12-14,Sunday,1,1,Sunday,Weekend,0,0,0,Regular Operations,0,1.0
+2025-12-15,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-16,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-17,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-18,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-19,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-20,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-21,Sunday,1,1,Sunday,Weekend,0,0,0,Regular Operations,0,1.0
+2025-12-22,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-23,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-24,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Regular Operations,0,1.0
+2025-12-25,Thursday,0,1,Christmas Day,National,0,0,0,Regular Operations,0,1.0
+2025-12-26,Friday,0,0,Regular Banking Day,Working Day,0,0,1,Regular Operations,0,1.0
+2025-12-27,Saturday,1,1,4th Saturday,Weekend,0,0,1,Regular Operations,0,1.0
+2025-12-28,Sunday,1,1,Sunday,Weekend,1,0,1,Regular Operations,0,1.0
+2025-12-29,Monday,0,0,Regular Banking Day,Working Day,1,0,1,Regular Operations,0,1.0
+2025-12-30,Tuesday,0,0,Regular Banking Day,Working Day,1,0,1,Regular Operations,0,1.0
+2025-12-31,Wednesday,0,0,Regular Banking Day,Working Day,1,0,1,Regular Operations,0,1.0
+2026-01-01,Thursday,0,1,New Year Bank Closure,Annual,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-02,Friday,0,0,Regular Banking Day,Working Day,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-03,Saturday,0,0,Regular Banking Day,Working Day,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-04,Sunday,1,1,Sunday,Weekend,1,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-05,Monday,0,0,Regular Banking Day,Working Day,1,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-06,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-07,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-08,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-09,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-10,Saturday,1,1,2th Saturday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-11,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-12,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-13,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-14,Wednesday,0,1,Makar Sankranti / Pongal,Festival,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-15,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-16,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-17,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-18,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-19,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-20,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-21,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-22,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-23,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-24,Saturday,1,1,4th Saturday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-25,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-01-26,Monday,0,1,Republic Day,National,0,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-01-27,Tuesday,0,0,Regular Banking Day,Working Day,0,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-01-28,Wednesday,0,0,Regular Banking Day,Working Day,1,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-01-29,Thursday,0,0,Regular Banking Day,Working Day,1,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-01-30,Friday,0,0,Regular Banking Day,Working Day,1,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-01-31,Saturday,0,0,Regular Banking Day,Working Day,1,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-02-01,Sunday,1,1,Sunday,Weekend,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-02,Monday,0,0,Regular Banking Day,Working Day,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-03,Tuesday,0,0,Regular Banking Day,Working Day,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-04,Wednesday,0,0,Regular Banking Day,Working Day,1,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-05,Thursday,0,0,Regular Banking Day,Working Day,1,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-06,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-07,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-08,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-09,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-10,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-11,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-12,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-13,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-14,Saturday,1,1,2th Saturday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-15,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-16,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-17,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-18,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-19,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-20,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-21,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-22,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-23,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-24,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-25,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-02-26,Thursday,0,0,Regular Banking Day,Working Day,0,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-02-27,Friday,0,0,Regular Banking Day,Working Day,0,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-02-28,Saturday,1,1,4th Saturday,Weekend,1,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-03-01,Sunday,1,1,Sunday,Weekend,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-02,Monday,0,0,Regular Banking Day,Working Day,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-03,Tuesday,0,0,Regular Banking Day,Working Day,1,1,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-04,Wednesday,0,1,Holi,Festival,1,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-05,Thursday,0,0,Regular Banking Day,Working Day,1,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-06,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,1,1.25
+2026-03-07,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-08,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-09,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-10,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-11,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-12,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-13,Friday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-14,Saturday,1,1,2th Saturday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-15,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-16,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-17,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-18,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-19,Thursday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-20,Friday,0,1,Ugadi / Telugu New Year,Regional,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-21,Saturday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-22,Sunday,1,1,Sunday,Weekend,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-23,Monday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-24,Tuesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-25,Wednesday,0,0,Regular Banking Day,Working Day,0,0,0,Fiscal Year-End Tax Planning,0,1.0
+2026-03-26,Thursday,0,0,Regular Banking Day,Working Day,0,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-03-27,Friday,0,0,Regular Banking Day,Working Day,0,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-03-28,Saturday,1,1,4th Saturday,Weekend,1,0,1,Fiscal Year-End Tax Planning,0,1.0
+2026-03-29,Sunday,1,1,Sunday,Weekend,1,0,1,Fiscal Year-End Tax Planning,0,1.0

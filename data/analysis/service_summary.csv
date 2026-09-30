@@ -1,0 +1,15 @@
+service_type,total_requests,avg_duration,total_duration_minutes,avg_waiting_time,p90_waiting_time,abandoned_requests,appointment_requests,service_id,category_group,average_service_time,minimum_service_time,maximum_service_time,complexity_level,required_skill,digital_available,priority_level,base_share,workload_share_pct
+Account Opening,6345,23.71,150468.9,4.93,11.16,96,743,SRV03,Customer Onboarding,24.0,14.0,40.0,High,Account Services,True,High,0.08,15.54
+Loan Application,4186,33.45,140040.8,4.97,11.25,74,486,SRV08,Lending Services,34.0,20.0,55.0,High,Loans,False,Urgent,0.05,14.46
+KYC Update,8212,13.35,109651.5,4.99,11.0,142,1024,SRV04,Compliance & Profile,13.5,7.0,24.0,Medium,KYC,True,High,0.11,11.33
+Loan Enquiry,4831,17.82,86065.8,4.93,11.3,71,597,SRV07,Lending Services,18.0,10.0,30.0,Medium,Loans,True,High,0.06,8.89
+Investment Enquiry,3271,25.56,83607.7,5.01,11.6,52,336,SRV10,Wealth Management,26.0,15.0,45.0,High,General Banking,True,Standard,0.04,8.64
+Cash Deposit,11611,6.45,74944.1,4.71,9.5,164,1382,SRV02,Cash Operations,6.5,3.0,14.0,Low,Cash,True,Standard,0.14,7.74
+Cash Withdrawal,12712,4.46,56688.1,4.63,9.29,138,1561,SRV01,Cash Operations,4.5,2.0,9.0,Low,Cash,True,Standard,0.16,5.85
+Credit Card Service,4543,11.91,54121.3,4.79,10.5,63,561,SRV09,Cards & Payment,12.0,6.0,22.0,Medium,Credit Cards,True,Standard,0.06,5.59
+Complaint,3004,16.26,48838.0,4.98,11.0,47,381,SRV11,Customer Support,16.5,8.0,32.0,Medium,Customer Support,True,Urgent,0.04,5.04
+General Customer Support,4470,9.83,43952.6,4.99,10.8,66,553,SRV12,Customer Support,10.0,4.0,20.0,Low,Customer Support,True,Standard,0.06,4.54
+Digital Banking Support,3043,12.27,37336.8,4.97,12.26,41,337,SRV14,Digital & Tech Assistance,12.5,5.0,25.0,Medium,Account Services,False,Standard,0.04,3.86
+Cheque Services,5759,5.9,33989.1,5.03,11.52,84,666,SRV06,Cash Operations,6.0,2.5,12.0,Low,Cash,True,Standard,0.07,3.51
+Address Update,3802,7.88,29951.9,5.05,11.89,58,449,SRV05,Compliance & Profile,8.0,4.0,15.0,Low,KYC,True,Standard,0.05,3.09
+Statement Request,3739,4.96,18556.1,4.86,9.82,52,457,SRV13,Account Services,5.0,2.0,10.0,Low,Account Services,True,Standard,0.05,1.92

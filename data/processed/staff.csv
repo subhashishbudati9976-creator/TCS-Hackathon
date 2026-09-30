@@ -1,0 +1,102 @@
+staff_id,branch_id,role,primary_skill,secondary_skills,shift_start,shift_end,availability,experience_level,status
+STF_0001,BR001,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.95,Senior,Active
+STF_0002,BR001,Cash Teller,Cash,Cash,09:30:00,18:00:00,0.89,Mid,Active
+STF_0003,BR001,Junior Cash Teller,Cash,Cash,09:00:00,17:30:00,0.9,Junior,Active
+STF_0004,BR001,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.9,Senior,Active
+STF_0005,BR001,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.9,Mid,Active
+STF_0006,BR001,Account Services Officer,Account Services,Account Services;KYC,09:30:00,18:00:00,0.88,Mid,Active
+STF_0007,BR001,Loan Officer,Loans,Loans;Credit Cards,09:30:00,18:00:00,0.91,Senior,Active
+STF_0008,BR001,Assistant Loan Officer,Loans,Loans,09:30:00,18:00:00,0.91,Junior,Active
+STF_0009,BR001,Credit Card Specialist,Credit Cards,Credit Cards;Customer Support,09:00:00,17:30:00,0.96,Mid,Active
+STF_0010,BR001,Customer Support Representative,Customer Support,Customer Support;General Banking,09:30:00,18:00:00,0.95,Junior,Active
+STF_0011,BR001,Senior Service Executive,Customer Support,Customer Support;Account Services,09:30:00,18:00:00,0.92,Senior,Active
+STF_0012,BR001,Wealth Relationship Manager,General Banking,General Banking;Account Services,09:30:00,18:00:00,0.94,Senior,Active
+STF_0013,BR001,Branch Operations Assistant,General Banking,General Banking;Cash,09:30:00,18:00:00,0.95,Mid,Active
+STF_0014,BR001,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.91,Senior,Active
+STF_0015,BR001,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.89,Senior,Active
+STF_0016,BR002,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.92,Senior,Active
+STF_0017,BR002,Cash Teller,Cash,Cash,09:30:00,18:00:00,0.95,Mid,Active
+STF_0018,BR002,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.93,Junior,Active
+STF_0019,BR002,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.91,Senior,Active
+STF_0020,BR002,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.9,Mid,Active
+STF_0021,BR002,Account Services Officer,Account Services,Account Services;KYC,09:30:00,18:00:00,0.89,Mid,Active
+STF_0022,BR002,Loan Officer,Loans,Loans;Credit Cards,09:30:00,18:00:00,0.92,Senior,Active
+STF_0023,BR002,Assistant Loan Officer,Loans,Loans,09:30:00,18:00:00,0.94,Junior,Active
+STF_0024,BR002,Credit Card Specialist,Credit Cards,Credit Cards;Customer Support,09:00:00,17:30:00,0.93,Mid,Active
+STF_0025,BR002,Customer Support Representative,Customer Support,Customer Support;General Banking,09:30:00,18:00:00,0.89,Junior,Active
+STF_0026,BR002,Senior Service Executive,Customer Support,Customer Support;Account Services,09:30:00,18:00:00,0.93,Senior,Active
+STF_0027,BR002,Wealth Relationship Manager,General Banking,General Banking;Account Services,09:00:00,17:30:00,0.94,Senior,Active
+STF_0028,BR003,Senior Cashier / Teller,Cash,Cash;General Banking,09:30:00,18:00:00,0.89,Senior,Active
+STF_0029,BR003,Cash Teller,Cash,Cash,09:00:00,17:30:00,0.94,Mid,Active
+STF_0030,BR003,Junior Cash Teller,Cash,Cash,09:00:00,17:30:00,0.89,Junior,Active
+STF_0031,BR003,KYC & Compliance Officer,KYC,KYC;Account Services,09:30:00,18:00:00,0.93,Senior,On-Leave
+STF_0032,BR003,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.88,Mid,Active
+STF_0033,BR003,Account Services Officer,Account Services,Account Services;KYC,09:30:00,18:00:00,0.93,Mid,Active
+STF_0034,BR003,Loan Officer,Loans,Loans;Credit Cards,09:30:00,18:00:00,0.89,Senior,Active
+STF_0035,BR003,Assistant Loan Officer,Loans,Loans,09:00:00,17:30:00,0.98,Junior,Active
+STF_0036,BR003,Credit Card Specialist,Credit Cards,Credit Cards;Customer Support,09:00:00,17:30:00,0.93,Mid,Active
+STF_0037,BR003,Customer Support Representative,Customer Support,Customer Support;General Banking,09:30:00,18:00:00,0.97,Junior,Active
+STF_0038,BR003,Senior Service Executive,Customer Support,Customer Support;Account Services,09:30:00,18:00:00,0.94,Senior,Active
+STF_0039,BR003,Wealth Relationship Manager,General Banking,General Banking;Account Services,09:30:00,18:00:00,0.93,Senior,Active
+STF_0040,BR003,Branch Operations Assistant,General Banking,General Banking;Cash,09:30:00,18:00:00,0.88,Mid,Active
+STF_0041,BR004,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.92,Senior,On-Leave
+STF_0042,BR004,Cash Teller,Cash,Cash,09:30:00,18:00:00,0.9,Mid,Active
+STF_0043,BR004,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.89,Junior,Active
+STF_0044,BR004,KYC & Compliance Officer,KYC,KYC;Account Services,09:30:00,18:00:00,0.98,Senior,Active
+STF_0045,BR004,KYC Specialist,KYC,KYC,09:00:00,17:30:00,0.95,Mid,On-Leave
+STF_0046,BR004,Account Services Officer,Account Services,Account Services;KYC,09:00:00,17:30:00,0.93,Mid,Active
+STF_0047,BR004,Loan Officer,Loans,Loans;Credit Cards,09:30:00,18:00:00,0.97,Senior,Active
+STF_0048,BR004,Assistant Loan Officer,Loans,Loans,09:30:00,18:00:00,0.95,Junior,Active
+STF_0049,BR005,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.93,Senior,Active
+STF_0050,BR005,Cash Teller,Cash,Cash,09:00:00,17:30:00,0.91,Mid,Active
+STF_0051,BR005,Junior Cash Teller,Cash,Cash,09:00:00,17:30:00,0.9,Junior,Active
+STF_0052,BR005,KYC & Compliance Officer,KYC,KYC;Account Services,09:30:00,18:00:00,0.9,Senior,Active
+STF_0053,BR005,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.89,Mid,Active
+STF_0054,BR005,Account Services Officer,Account Services,Account Services;KYC,09:30:00,18:00:00,0.9,Mid,Active
+STF_0055,BR005,Loan Officer,Loans,Loans;Credit Cards,09:30:00,18:00:00,0.94,Senior,Active
+STF_0056,BR006,Senior Cashier / Teller,Cash,Cash;General Banking,09:30:00,18:00:00,0.9,Senior,Active
+STF_0057,BR006,Cash Teller,Cash,Cash,09:00:00,17:30:00,0.92,Mid,Active
+STF_0058,BR006,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.95,Junior,On-Leave
+STF_0059,BR006,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.92,Senior,Active
+STF_0060,BR006,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.9,Mid,Active
+STF_0061,BR006,Account Services Officer,Account Services,Account Services;KYC,09:00:00,17:30:00,0.92,Mid,Active
+STF_0062,BR006,Loan Officer,Loans,Loans;Credit Cards,09:00:00,17:30:00,0.97,Senior,Active
+STF_0063,BR006,Assistant Loan Officer,Loans,Loans,09:30:00,18:00:00,0.94,Junior,Active
+STF_0064,BR006,Credit Card Specialist,Credit Cards,Credit Cards;Customer Support,09:30:00,18:00:00,0.96,Mid,On-Leave
+STF_0065,BR006,Customer Support Representative,Customer Support,Customer Support;General Banking,09:30:00,18:00:00,0.96,Junior,Active
+STF_0066,BR007,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.97,Senior,Active
+STF_0067,BR007,Cash Teller,Cash,Cash,09:00:00,17:30:00,0.88,Mid,Active
+STF_0068,BR007,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.96,Junior,Active
+STF_0069,BR007,KYC & Compliance Officer,KYC,KYC;Account Services,09:30:00,18:00:00,0.95,Senior,Active
+STF_0070,BR007,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.93,Mid,Active
+STF_0071,BR007,Account Services Officer,Account Services,Account Services;KYC,09:00:00,17:30:00,0.89,Mid,Active
+STF_0072,BR007,Loan Officer,Loans,Loans;Credit Cards,09:00:00,17:30:00,0.91,Senior,Active
+STF_0073,BR007,Assistant Loan Officer,Loans,Loans,09:00:00,17:30:00,0.97,Junior,Active
+STF_0074,BR007,Credit Card Specialist,Credit Cards,Credit Cards;Customer Support,09:00:00,17:30:00,0.93,Mid,Active
+STF_0075,BR007,Customer Support Representative,Customer Support,Customer Support;General Banking,09:00:00,17:30:00,0.89,Junior,Active
+STF_0076,BR008,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.97,Senior,Active
+STF_0077,BR008,Cash Teller,Cash,Cash,09:30:00,18:00:00,0.94,Mid,Active
+STF_0078,BR008,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.93,Junior,Active
+STF_0079,BR008,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.95,Senior,Active
+STF_0080,BR008,KYC Specialist,KYC,KYC,09:00:00,17:30:00,0.95,Mid,Active
+STF_0081,BR008,Account Services Officer,Account Services,Account Services;KYC,09:00:00,17:30:00,0.96,Mid,Active
+STF_0082,BR008,Loan Officer,Loans,Loans;Credit Cards,09:00:00,17:30:00,0.98,Senior,On-Leave
+STF_0083,BR008,Assistant Loan Officer,Loans,Loans,09:00:00,17:30:00,0.9,Junior,Active
+STF_0084,BR009,Senior Cashier / Teller,Cash,Cash;General Banking,09:30:00,18:00:00,0.97,Senior,Active
+STF_0085,BR009,Cash Teller,Cash,Cash,09:00:00,17:30:00,0.96,Mid,Active
+STF_0086,BR009,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.98,Junior,Active
+STF_0087,BR009,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.96,Senior,Active
+STF_0088,BR009,KYC Specialist,KYC,KYC,09:30:00,18:00:00,0.97,Mid,Active
+STF_0089,BR009,Account Services Officer,Account Services,Account Services;KYC,09:00:00,17:30:00,0.89,Mid,Active
+STF_0090,BR009,Loan Officer,Loans,Loans;Credit Cards,09:00:00,17:30:00,0.94,Senior,Active
+STF_0091,BR009,Assistant Loan Officer,Loans,Loans,09:00:00,17:30:00,0.94,Junior,Active
+STF_0092,BR009,Credit Card Specialist,Credit Cards,Credit Cards;Customer Support,09:00:00,17:30:00,0.97,Mid,Active
+STF_0093,BR009,Customer Support Representative,Customer Support,Customer Support;General Banking,09:00:00,17:30:00,0.92,Junior,Active
+STF_0094,BR009,Senior Service Executive,Customer Support,Customer Support;Account Services,09:00:00,17:30:00,0.96,Senior,Active
+STF_0095,BR010,Senior Cashier / Teller,Cash,Cash;General Banking,09:00:00,17:30:00,0.92,Senior,Active
+STF_0096,BR010,Cash Teller,Cash,Cash,09:30:00,18:00:00,0.89,Mid,On-Leave
+STF_0097,BR010,Junior Cash Teller,Cash,Cash,09:30:00,18:00:00,0.89,Junior,Active
+STF_0098,BR010,KYC & Compliance Officer,KYC,KYC;Account Services,09:00:00,17:30:00,0.94,Senior,Active
+STF_0099,BR010,KYC Specialist,KYC,KYC,09:00:00,17:30:00,0.92,Mid,Active
+STF_0100,BR010,Account Services Officer,Account Services,Account Services;KYC,09:30:00,18:00:00,0.88,Mid,Active
+STF_0101,BR010,Loan Officer,Loans,Loans;Credit Cards,09:30:00,18:00:00,0.95,Senior,Active

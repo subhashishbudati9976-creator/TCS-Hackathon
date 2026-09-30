@@ -1,0 +1,5 @@
+dimension,mean_wait,median_wait,p75_wait,p90_wait,p95_wait,max_wait
+All Branches Overall,4.87,2.4,3.2,10.5,23.7,65.0
+Appointments,3.54,2.4,3.1,6.8,13.5,33.7
+Walk-ins,5.05,2.4,3.2,11.6,25.6,65.0
+Salary Period Days,6.3,2.5,3.4,18.8,32.1,64.9

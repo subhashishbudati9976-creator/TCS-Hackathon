@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-09-30T12:56:09.674657",
+  "total_branches": 10,
+  "total_staff": 101,
+  "total_visits": 79528,
+  "total_appointments": 9533,
+  "total_feedback_records": 11183,
+  "average_waiting_time_minutes": 4.87,
+  "p90_waiting_time_minutes": 10.5,
+  "overall_abandonment_rate_pct": 1.44,
+  "digital_eligible_traffic_pct": 90.91,
+  "potential_staff_hours_savable_via_digital": 4613.2,
+  "busiest_branch": "Metro Central Flagship",
+  "highest_wait_branch": "University Campus Branch",
+  "critical_bottleneck_hours_count": 27
+}

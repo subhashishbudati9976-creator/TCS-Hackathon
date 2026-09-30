@@ -20,6 +20,7 @@ from app.routes import (
     recommendations,
     simulation,
     feedback,
+    analysis,
 )
 
 
@@ -74,3 +75,4 @@ app.include_router(bottlenecks.router)
 app.include_router(recommendations.router)
 app.include_router(simulation.router)
 app.include_router(feedback.router)
+app.include_router(analysis.router)

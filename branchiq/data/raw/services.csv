@@ -1,0 +1,15 @@
+service_id,service_type,category_group,average_service_time,minimum_service_time,maximum_service_time,complexity_level,required_skill,digital_available,priority_level,base_share
+SRV01,Cash Withdrawal,Cash Operations,4.5,2.0,9.0,Low,Cash,True,Standard,0.16
+SRV02,Cash Deposit,Cash Operations,6.5,3.0,14.0,Low,Cash,True,Standard,0.14
+SRV03,Account Opening,Customer Onboarding,24.0,14.0,40.0,High,Account Services,True,High,0.08
+SRV04,KYC Update,Compliance & Profile,13.5,7.0,24.0,Medium,KYC,True,High,0.11
+SRV05,Address Update,Compliance & Profile,8.0,4.0,15.0,Low,KYC,True,Standard,0.05
+SRV06,Cheque Services,Cash Operations,6.0,2.5,12.0,Low,Cash,True,Standard,0.07
+SRV07,Loan Enquiry,Lending Services,18.0,10.0,30.0,Medium,Loans,True,High,0.06
+SRV08,Loan Application,Lending Services,34.0,20.0,55.0,High,Loans,False,Urgent,0.05
+SRV09,Credit Card Service,Cards & Payment,12.0,6.0,22.0,Medium,Credit Cards,True,Standard,0.06
+SRV10,Investment Enquiry,Wealth Management,26.0,15.0,45.0,High,General Banking,True,Standard,0.04
+SRV11,Complaint,Customer Support,16.5,8.0,32.0,Medium,Customer Support,True,Urgent,0.04
+SRV12,General Customer Support,Customer Support,10.0,4.0,20.0,Low,Customer Support,True,Standard,0.06
+SRV13,Statement Request,Account Services,5.0,2.0,10.0,Low,Account Services,True,Standard,0.05
+SRV14,Digital Banking Support,Digital & Tech Assistance,12.5,5.0,25.0,Medium,Account Services,False,Standard,0.04
