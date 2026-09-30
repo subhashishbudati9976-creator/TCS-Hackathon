@@ -1,0 +1,6 @@
+staff_id,staff_name,branch_id,primary_role,skills,shift_start,shift_end,current_counter,status
+STF_101,Aarav Sharma,BR_MUM_01,Senior Teller,Cash Operations;Passbook;FD,09:30,17:30,Counter_01,Active
+STF_102,Priya Nair,BR_MUM_01,Universal Banker,Cash Operations;KYC;Disputes,09:30,17:30,Counter_02,Active
+STF_103,Rohan Verma,BR_MUM_01,Loan Specialist,Home Loan;NRI Banking,10:00,18:00,Desk_01,Active
+STF_104,Sneha Patel,BR_MUM_01,Customer Service Officer,Account Services;KYC;Disputes,09:30,17:30,Desk_02,Break
+STF_105,Vikram Sen,BR_MUM_01,Floater / Back-Office,Cash Operations;KYC;Passbook,10:00,18:00,Backoffice_01,Available

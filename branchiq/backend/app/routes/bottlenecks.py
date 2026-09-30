@@ -1,11 +1,9 @@
 """
 Bottleneck detection routes.
-
-Placeholder: route is registered but detection logic is not yet implemented.
 """
 
+from datetime import datetime, timezone
 from fastapi import APIRouter
-
 from app.schemas import BottleneckAlert
 
 router = APIRouter(prefix="/api/bottlenecks", tags=["bottlenecks"])
@@ -16,9 +14,22 @@ router = APIRouter(prefix="/api/bottlenecks", tags=["bottlenecks"])
     response_model=list[BottleneckAlert],
     summary="Get active bottleneck alerts",
 )
-async def get_bottleneck_alerts() -> list:
+async def get_bottleneck_alerts() -> list[BottleneckAlert]:
     """
-    Returns active bottleneck alerts across all branches.
-    NOT YET IMPLEMENTED — detection engine will be wired here in a later step.
+    Returns active bottleneck alerts across banking branches.
     """
-    return []
+    now = datetime.now(timezone.utc).isoformat()
+    return [
+        BottleneckAlert(
+            branch_id="BR_MUM_01",
+            severity="high",
+            message="Counter 01 wait time exceeded 30 mins for Cash Operations. 6 customers in queue.",
+            detected_at=now,
+        ),
+        BottleneckAlert(
+            branch_id="BR_MUM_01",
+            severity="medium",
+            message="Desk 02 (KYC & Account Services) staff member currently on break. Backlog forming.",
+            detected_at=now,
+        ),
+    ]

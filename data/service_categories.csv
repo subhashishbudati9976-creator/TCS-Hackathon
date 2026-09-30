@@ -1,0 +1,9 @@
+service_id,service_name,category,avg_service_time_mins,kiosk_eligible,digital_alternative_url,complexity_score
+SRV_CASH_DEP,Cash Deposit,Cash Operations,6,TRUE,app://deposit,1
+SRV_CASH_WDR,Cash Withdrawal,Cash Operations,5,TRUE,app://atm,1
+SRV_PASSBOOK,Passbook Update,Account Services,4,TRUE,app://self-service-kiosk,1
+SRV_KYC_UPD,KYC Re-verification,Compliance,18,TRUE,app://video-kyc,2
+SRV_HOME_LOAN,Home Loan Application,Lending,45,FALSE,,5
+SRV_FD_OPEN,Fixed Deposit Opening,Investment,15,TRUE,app://deposits/fd,2
+SRV_DISPUTE,Card Transaction Dispute,Customer Support,25,FALSE,,4
+SRV_NRI_SERV,NRI Banking Consultation,Wealth,35,FALSE,,4

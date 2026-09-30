@@ -1,0 +1,5 @@
+feedback_id,branch_id,token_id,rating_1_to_5,comment,sentiment_tag,sentiment_score
+FB_501,BR_MUM_01,TKN_9003,2,"Waited 30 minutes just to deposit a small amount. Counter 1 was very slow.",Negative,0.18
+FB_502,BR_MUM_01,TKN_9002,5,"Rohan explained the home loan process with great clarity. Very smooth.",Positive,0.92
+FB_503,BR_MUM_01,TKN_9004,4,"The floor greeter guided me directly to the self-service machine. Saved time.",Positive,0.85
+FB_504,BR_MUM_01,TKN_9005,1,"Only one KYC desk was working during lunch hours. Crowded and chaotic.",Negative,0.12

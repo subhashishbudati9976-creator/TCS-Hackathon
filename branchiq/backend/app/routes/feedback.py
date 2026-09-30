@@ -1,12 +1,11 @@
 """
 Feedback NLP routes.
-
-Placeholder: route is registered but NLP analysis is not yet implemented.
+Analyzes customer reviews using Gemini NLP and sentiment heuristics.
 """
 
 from fastapi import APIRouter
-
 from app.schemas import FeedbackRequest, FeedbackAnalysis
+from app.services.gemini_client import analyze_customer_feedback_nlp
 
 router = APIRouter(prefix="/api/feedback", tags=["feedback"])
 
@@ -16,14 +15,14 @@ router = APIRouter(prefix="/api/feedback", tags=["feedback"])
     response_model=FeedbackAnalysis,
     summary="Analyze customer feedback sentiment",
 )
-async def analyze_feedback(request: FeedbackRequest) -> dict:
+async def analyze_feedback(request: FeedbackRequest) -> FeedbackAnalysis:
     """
-    Analyzes customer feedback text and returns sentiment.
-    NOT YET IMPLEMENTED — NLP pipeline will be wired here in a later step.
+    Analyzes customer feedback text and returns sentiment and score.
     """
-    return {
-        "feedback_id": "not_implemented",
-        "text": request.text,
-        "sentiment": "neutral",
-        "score": 0.0,
-    }
+    result = analyze_customer_feedback_nlp(request.text)
+    return FeedbackAnalysis(
+        feedback_id="FB_LIVE_01",
+        text=request.text,
+        sentiment=result["sentiment"],
+        score=result["score"],
+    )
