@@ -88,33 +88,34 @@ export const SimulationPage: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen bg-[#0e1117] text-slate-100 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen avenue-mesh-bg text-slate-100 p-4 sm:p-6 lg:p-8 relative">
+      <div className="cyber-grid absolute inset-0 opacity-25 pointer-events-none" />
+      <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         {/* Header */}
-        <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-6 shadow-sm">
+        <div className="avenue-glass rounded-2xl p-6 shadow-xl">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
             <div>
-              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-emerald-400 uppercase">
+              <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-cyan-400 uppercase font-mono">
                 <SlidersHorizontal className="w-3.5 h-3.5" />
-                <span>What-If Scenario Sandbox</span>
+                <span>What-If Scenario Sandbox • Avenue AI</span>
               </div>
-              <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
+              <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white mt-1">
                 Operational Intervention Simulator
               </h1>
               <p className="text-xs text-slate-400 mt-0.5">
-                Model staff reassignments, digital diversion, and queue redirection without mutating live branch rosters
+                Model staff reassignments, digital diversion, and queue redirection before applying to live rosters
               </p>
             </div>
 
-            <div className="flex items-center gap-2 bg-[#0e1117] border border-slate-700 rounded-lg px-3 py-1.5">
-              <Building2 className="w-4 h-4 text-slate-400" />
+            <div className="flex items-center gap-2 bg-slate-900/90 border border-slate-700/80 rounded-xl px-3 py-2 shadow-inner">
+              <Building2 className="w-4 h-4 text-cyan-400" />
               <select
                 value={branchId}
                 onChange={(e) => setBranchId(e.target.value)}
-                className="bg-transparent text-xs font-medium text-slate-200 focus:outline-none cursor-pointer"
+                className="bg-transparent text-xs font-semibold text-slate-200 focus:outline-none cursor-pointer"
               >
                 {branches.map((b) => (
-                  <option key={b.branch_id} value={b.branch_id} className="bg-[#161a22]">
+                  <option key={b.branch_id} value={b.branch_id} className="bg-slate-900 text-slate-200">
                     {b.branch_name} ({b.branch_id})
                   </option>
                 ))}
@@ -124,7 +125,7 @@ export const SimulationPage: React.FC = () => {
         </div>
 
         {error && (
-          <div className="p-4 rounded-lg bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs">
+          <div className="p-4 rounded-xl bg-rose-500/15 border border-rose-500/30 text-rose-300 text-xs">
             {error}
           </div>
         )}
@@ -132,9 +133,9 @@ export const SimulationPage: React.FC = () => {
         {/* Controls and Results Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {/* Left Column: Scenario Controls */}
-          <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm space-y-5">
+          <div className="avenue-glass rounded-2xl p-5 shadow-xl space-y-5">
             <h2 className="text-sm font-bold text-white flex items-center gap-2">
-              <Layers className="w-4 h-4 text-emerald-400" />
+              <Layers className="w-4 h-4 text-cyan-400" />
               <span>Configure Scenario</span>
             </h2>
 

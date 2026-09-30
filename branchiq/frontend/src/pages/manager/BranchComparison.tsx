@@ -52,31 +52,32 @@ export const BranchComparison: React.FC = () => {
     })
 
   return (
-    <div className="min-h-screen bg-[#0e1117] text-slate-100 p-4 sm:p-6 lg:p-8">
-      <div className="max-w-7xl mx-auto space-y-6">
+    <div className="min-h-screen avenue-mesh-bg text-slate-100 p-4 sm:p-6 lg:p-8 relative">
+      <div className="cyber-grid absolute inset-0 opacity-25 pointer-events-none" />
+      <div className="max-w-7xl mx-auto space-y-6 relative z-10">
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#161a22] border border-[#2d3748] rounded-xl p-5 shadow-sm">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 avenue-glass rounded-2xl p-5 shadow-xl">
           <div>
-            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-emerald-400 uppercase">
+            <div className="flex items-center gap-2 text-xs font-semibold tracking-wider text-cyan-400 uppercase font-mono">
               <Building2 className="w-3.5 h-3.5" />
-              <span>Multi-Branch Operational Matrix</span>
+              <span>Multi-Branch Operational Matrix • Avenue Intelligence</span>
             </div>
-            <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mt-1">
-              Regional Branch Comparison
+            <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white mt-1">
+              Regional Branch Network Comparison
             </h1>
             <p className="text-xs text-slate-400 mt-0.5">
-              Live capacity utilization, peak load risks, and customer satisfaction across all 10 branches
+              Live capacity utilization, peak load risk index, and customer satisfaction across all branches
             </p>
           </div>
 
           <div className="relative w-full sm:w-64">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+            <Search className="w-4 h-4 text-cyan-400 absolute left-3 top-2.5" />
             <input
               type="text"
               placeholder="Search branch or city..."
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full pl-9 pr-3 py-1.5 rounded-lg bg-[#0e1117] border border-slate-700 text-xs text-slate-200 focus:outline-none focus:border-emerald-500 shadow-inner"
+              className="w-full pl-9 pr-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-700/80 text-xs text-slate-200 focus:outline-none focus:border-cyan-500 shadow-inner"
             />
           </div>
         </div>
@@ -88,7 +89,7 @@ export const BranchComparison: React.FC = () => {
         )}
 
         {/* Comparison Table */}
-        <div className="bg-[#161a22] border border-[#2d3748] rounded-xl shadow-sm overflow-hidden">
+        <div className="avenue-glass rounded-2xl shadow-xl overflow-hidden">
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs border-collapse">
               <thead>
