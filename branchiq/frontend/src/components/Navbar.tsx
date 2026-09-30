@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext'
+import { BranchIQLogo } from './BranchIQLogo'
 import {
   Building2,
   BarChart3,
@@ -11,6 +12,8 @@ import {
   LogOut,
   UserCheck,
   Sparkles,
+  Shield,
+  Layers,
 } from 'lucide-react'
 
 export const Navbar: React.FC = () => {
@@ -51,27 +54,16 @@ export const Navbar: React.FC = () => {
   const links = isManager ? managerLinks : customerLinks
 
   return (
-    <header className="sticky top-0 z-50 bg-[#161a22] border-b border-[#2d3748] px-4 sm:px-6 py-2.5 shadow-md">
+    <header className="sticky top-0 z-50 backdrop-blur-xl bg-slate-950/85 border-b border-slate-800/90 px-4 sm:px-6 py-2.5 shadow-xl shadow-black/20">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        {/* Brand */}
+        {/* Brand Logo & Title */}
         <div className="flex items-center gap-6">
-          <Link to={isManager ? '/manager/dashboard' : '/customer/dashboard'} className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-lg bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-lg shadow-sm">
-              AV
-            </div>
-            <div>
-              <div className="flex items-center gap-2">
-                <span className="font-bold text-base tracking-wider text-slate-100">AVENUE</span>
-                <span className="text-[10px] px-1.5 py-0.5 rounded font-mono font-medium tracking-tight bg-slate-800 text-slate-400 border border-slate-700">
-                  MVP 1.0
-                </span>
-              </div>
-              <p className="text-[11px] text-slate-400 font-medium">Branch Intelligence Platform</p>
-            </div>
+          <Link to={isManager ? '/manager/dashboard' : '/customer/dashboard'} className="group flex items-center gap-1">
+            <BranchIQLogo size={36} subtitle="Branch Intelligence Engine" />
           </Link>
 
           {/* Navigation Links */}
-          <nav className="hidden md:flex items-center gap-1.5 ml-4">
+          <nav className="hidden md:flex items-center gap-1.5 ml-4 pl-4 border-l border-slate-800/80">
             {links.map((link) => {
               const Icon = link.icon
               const isActive = location.pathname === link.to
@@ -79,13 +71,13 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`flex items-center gap-2 px-3 py-1.5 rounded-md text-xs font-medium transition-all ${
+                  className={`flex items-center gap-2 px-3 py-1.5 rounded-lg text-xs font-semibold tracking-wide transition-all duration-200 ${
                     isActive
-                      ? 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 shadow-sm'
-                      : 'text-slate-300 hover:text-slate-100 hover:bg-slate-800/60'
+                      ? 'bg-gradient-to-r from-cyan-500/20 via-blue-500/15 to-indigo-500/15 text-cyan-300 border border-cyan-500/40 shadow-sm shadow-cyan-500/20'
+                      : 'text-slate-300 hover:text-white hover:bg-slate-800/70 border border-transparent'
                   }`}
                 >
-                  <Icon className="w-3.5 h-3.5" />
+                  <Icon className={`w-3.5 h-3.5 ${isActive ? 'text-cyan-400' : 'text-slate-400'}`} />
                   <span>{link.label}</span>
                 </Link>
               )
@@ -95,31 +87,41 @@ export const Navbar: React.FC = () => {
 
         {/* Right action area */}
         <div className="flex items-center gap-3">
-          {/* Quick Demo Role Switcher */}
+          {/* Quick Demo Persona Switcher */}
           <button
             onClick={handleRoleSwitch}
-            title="Switch demo persona for testing"
-            className="flex items-center gap-2 text-xs font-medium px-2.5 py-1.5 rounded border border-slate-700 bg-slate-800/80 text-slate-300 hover:bg-slate-700/80 hover:text-white transition-all shadow-sm cursor-pointer"
+            title="Switch demo persona (Manager vs Customer)"
+            className="flex items-center gap-2 text-xs font-medium px-3 py-1.5 rounded-lg border border-slate-700/80 bg-slate-900/90 hover:bg-slate-800/90 text-slate-200 transition-all shadow-sm hover:border-slate-600 cursor-pointer group"
           >
-            <UserCheck className="w-3.5 h-3.5 text-emerald-400" />
-            <span className="hidden sm:inline">Role:</span>
-            <span className={`font-semibold ${isManager ? 'text-amber-400' : 'text-blue-400'}`}>
+            <span className="relative flex h-2 w-2">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full opacity-75 ${isManager ? 'bg-amber-400' : 'bg-cyan-400'}`} />
+              <span className={`relative inline-flex rounded-full h-2 w-2 ${isManager ? 'bg-amber-500' : 'bg-cyan-500'}`} />
+            </span>
+            <span className="text-[11px] text-slate-400">Portal:</span>
+            <span className={`font-bold tracking-wide text-xs ${isManager ? 'text-amber-400' : 'text-cyan-400'}`}>
               {role}
             </span>
-            <span className="text-[10px] text-slate-400 underline ml-1">Switch</span>
+            <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-slate-800 text-slate-400 group-hover:text-slate-200 group-hover:bg-slate-700 transition-colors ml-0.5">
+              Switch
+            </span>
           </button>
 
           {/* User Profile Info */}
-          <div className="hidden lg:flex flex-col text-right">
-            <span className="text-xs font-semibold text-slate-200">{user?.name}</span>
-            <span className="text-[10px] text-slate-400">{user?.email}</span>
+          <div className="hidden lg:flex items-center gap-2.5 pl-2 border-l border-slate-800/80">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-cyan-600 to-indigo-600 flex items-center justify-center text-white font-bold text-xs shadow-xs border border-white/10">
+              {user?.name ? user.name.charAt(0).toUpperCase() : 'U'}
+            </div>
+            <div className="flex flex-col text-left">
+              <span className="text-xs font-semibold text-slate-200 leading-tight">{user?.name || 'Authorized User'}</span>
+              <span className="text-[10px] font-mono text-slate-400 leading-tight">{user?.email || 'user@branchiq.ai'}</span>
+            </div>
           </div>
 
           {/* Logout Button */}
           <button
             onClick={handleLogout}
-            title="Sign out"
-            className="p-1.5 rounded text-slate-400 hover:text-rose-400 hover:bg-slate-800 transition-colors cursor-pointer"
+            title="Sign out of BranchIQ"
+            className="p-2 rounded-lg text-slate-400 hover:text-rose-400 hover:bg-rose-500/10 hover:border-rose-500/30 border border-transparent transition-all cursor-pointer"
           >
             <LogOut className="w-4 h-4" />
           </button>

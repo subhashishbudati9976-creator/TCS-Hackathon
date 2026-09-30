@@ -24,7 +24,7 @@ export const CustomerAssistant: React.FC = () => {
     {
       id: 'm1',
       sender: 'assistant',
-      text: "Hello! I am your **AVENUE Banking Concierge**. I can help you check branch crowding, explain required paperwork, and guide you to instant online self-service channels. What would you like to know today?",
+      text: "Hello! I am your **BranchIQ Banking Concierge**. I can help you check branch crowding, explain required paperwork, and guide you to instant online self-service channels. What would you like to know today?",
       timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
     },
   ])
@@ -84,27 +84,27 @@ export const CustomerAssistant: React.FC = () => {
     <div className="min-h-screen bg-[#0e1117] text-slate-100 p-4 sm:p-6 lg:p-8 flex flex-col justify-between">
       <div className="max-w-4xl mx-auto w-full flex-1 flex flex-col space-y-4">
         {/* Assistant Header */}
-        <div className="bg-[#161a22] border border-[#2d3748] rounded-xl p-4 sm:p-5 shadow-sm flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-blue-500/15 border border-blue-500/30 flex items-center justify-center text-blue-400">
-              <Bot className="w-5 h-5" />
+        <div className="backdrop-blur-xl bg-slate-900/80 border border-slate-800 rounded-2xl p-4 sm:p-5 shadow-xl flex items-center justify-between">
+          <div className="flex items-center gap-3.5">
+            <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-cyan-500/20 to-blue-500/20 border border-cyan-500/30 flex items-center justify-center text-cyan-400 shadow-md shadow-cyan-500/10">
+              <Bot className="w-6 h-6" />
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-base sm:text-lg font-bold text-white">AVENUE AI Assistant</h1>
-                <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/15 text-emerald-400 border border-emerald-500/30">
+                <h1 className="text-base sm:text-lg font-bold text-white tracking-tight">BranchIQ AI Assistant</h1>
+                <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 font-medium">
                   Grounded • Real Data
                 </span>
               </div>
               <p className="text-xs text-slate-400">
-                Grounded banking operational guidance • Zero fabricated policy
+                Grounded banking operational guidance • Verified branch & document policies
               </p>
             </div>
           </div>
 
-          <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-400">
+          <div className="hidden sm:flex items-center gap-1.5 text-xs text-slate-400 font-medium">
             <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>Official Avenue Policy</span>
+            <span>Official Bank Policy</span>
           </div>
         </div>
 

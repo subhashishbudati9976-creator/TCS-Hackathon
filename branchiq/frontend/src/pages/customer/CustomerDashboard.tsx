@@ -52,34 +52,34 @@ export const CustomerDashboard: React.FC = () => {
               <span>Smart Branch & Digital Concierge</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold tracking-tight text-white">
-              Welcome to AVENUE Banking
+              Welcome to BranchIQ Banking
             </h1>
             <p className="text-sm text-slate-300 mt-2 leading-relaxed">
-              Check branch wait times before you leave home, find digital self-service alternatives, and know exactly what paperwork to bring.
+              Check live branch wait times before you leave home, find instant digital alternatives, and know exactly what paperwork to bring.
             </p>
 
             {/* Quick Action Shortcuts */}
             <div className="flex flex-wrap gap-3 mt-6">
               <button
                 onClick={() => navigate('/customer/branches')}
-                className="px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-md cursor-pointer"
+                className="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs font-semibold flex items-center gap-2 transition-all shadow-md shadow-emerald-600/20 cursor-pointer"
               >
                 <MapPin className="w-4 h-4" />
                 <span>Find Shortest Wait Branch</span>
               </button>
               <button
                 onClick={() => navigate('/customer/services')}
-                className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
+                className="px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
               >
                 <Sparkles className="w-4 h-4 text-emerald-400" />
                 <span>Browse Services & Docs</span>
               </button>
               <button
                 onClick={() => navigate('/customer/assistant')}
-                className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
+                className="px-4 py-2.5 rounded-xl bg-slate-800/90 hover:bg-slate-700/90 border border-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-2 transition-all cursor-pointer"
               >
-                <Bot className="w-4 h-4 text-blue-400" />
-                <span>Ask AVENUE Assistant</span>
+                <Bot className="w-4 h-4 text-cyan-400" />
+                <span>Ask BranchIQ AI Assistant</span>
               </button>
             </div>
           </div>
