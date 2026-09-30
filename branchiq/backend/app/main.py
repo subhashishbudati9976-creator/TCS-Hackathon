@@ -21,6 +21,9 @@ from app.routes import (
     simulation,
     feedback,
     analysis,
+    customer,
+    auth,
+    intelligence,
 )
 
 
@@ -41,7 +44,7 @@ async def lifespan(app: FastAPI):
 # ─────────────────────────────────────────────────────────────────────────────
 
 app = FastAPI(
-    title="BranchIQ API",
+    title="AVENUE Branch Intelligence API",
     description=(
         "Intelligent Branch Service Load and Customer Experience Optimizer — "
         "TCS Hackathon Backend API"
@@ -76,3 +79,6 @@ app.include_router(recommendations.router)
 app.include_router(simulation.router)
 app.include_router(feedback.router)
 app.include_router(analysis.router)
+app.include_router(customer.router)
+app.include_router(auth.router)
+app.include_router(intelligence.router)

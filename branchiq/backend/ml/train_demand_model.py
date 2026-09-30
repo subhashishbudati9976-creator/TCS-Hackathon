@@ -87,9 +87,9 @@ def train_branch_model() -> dict:
     val   = df[(df["date"] > TRAIN_END_DATE) & (df["date"] <= VAL_END_DATE)]
     test  = df[df["date"] > VAL_END_DATE]
 
-    print(f"  Train: {train['date'].min()} → {train['date'].max()} ({len(train)} rows)")
-    print(f"  Val:   {val['date'].min()} → {val['date'].max()} ({len(val)} rows)")
-    print(f"  Test:  {test['date'].min()} → {test['date'].max()} ({len(test)} rows)")
+    print(f"  Train: {train['date'].min()} -> {train['date'].max()} ({len(train)} rows)")
+    print(f"  Val:   {val['date'].min()} -> {val['date'].max()} ({len(val)} rows)")
+    print(f"  Test:  {test['date'].min()} -> {test['date'].max()} ({len(test)} rows)")
 
     # Guard: ensure feature columns exist
     available_feats = [c for c in BRANCH_FEATURE_COLS if c in df.columns]
@@ -149,7 +149,7 @@ def train_branch_model() -> dict:
     # Save model
     model_path = ARTIFACTS_DIR / "branch_demand_model.joblib"
     joblib.dump(model, model_path)
-    print(f"  Saved model → {model_path}")
+    print(f"  Saved model -> {model_path}")
 
     # Save feature list
     feat_path = ARTIFACTS_DIR / "branch_feature_cols.json"
@@ -181,7 +181,7 @@ def train_branch_model() -> dict:
     eval_path = ARTIFACTS_DIR / "evaluation.json"
     with open(eval_path, "w") as f:
         json.dump(report, f, indent=2)
-    print(f"  Saved evaluation → {eval_path}")
+    print(f"  Saved evaluation -> {eval_path}")
 
     return report
 
@@ -239,7 +239,7 @@ def train_service_model() -> dict:
     with open(svc_feat_path, "w") as f:
         json.dump(available_feats, f)
 
-    print(f"  Saved service model → {svc_model_path}")
+    print(f"  Saved service model -> {svc_model_path}")
     return {"service_model_metrics": {"test": svc_metrics}}
 
 
@@ -247,7 +247,7 @@ def train_service_model() -> dict:
 
 def main() -> None:
     print("=" * 60)
-    print("AVENUE — Demand Forecasting Training Pipeline")
+    print("AVENUE - Demand Forecasting Training Pipeline")
     print("=" * 60)
     branch_report = train_branch_model()
     print()
@@ -258,10 +258,10 @@ def main() -> None:
     print("=" * 60)
     test_m = branch_report["xgb_metrics"]["test"]
     base_m = branch_report["baseline_metrics"]["test"]
-    print(f"Branch model  — MAE: {test_m['MAE']:.3f}  RMSE: {test_m['RMSE']:.3f}  R²: {test_m['R2']:.3f}")
-    print(f"Baseline      — MAE: {base_m['MAE']:.3f}  RMSE: {base_m['RMSE']:.3f}  R²: {base_m['R2']:.3f}")
+    print(f"Branch model  - MAE: {test_m['MAE']:.3f}  RMSE: {test_m['RMSE']:.3f}  R2: {test_m['R2']:.3f}")
+    print(f"Baseline      - MAE: {base_m['MAE']:.3f}  RMSE: {base_m['RMSE']:.3f}  R2: {base_m['R2']:.3f}")
     svc_m = svc_report["service_model_metrics"]["test"]
-    print(f"Service model — MAE: {svc_m['MAE']:.3f}  RMSE: {svc_m['RMSE']:.3f}  R²: {svc_m['R2']:.3f}")
+    print(f"Service model - MAE: {svc_m['MAE']:.3f}  RMSE: {svc_m['RMSE']:.3f}  R2: {svc_m['R2']:.3f}")
 
 
 if __name__ == "__main__":

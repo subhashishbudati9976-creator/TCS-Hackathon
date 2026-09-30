@@ -1,24 +1,29 @@
 """
-Recommendation engine routes.
+AVENUE — Operational Recommendations Routes
 
-Placeholder: route is registered but recommendation logic is not yet implemented.
+GET /api/recommendations/{branch_id}
+GET /api/recommendations
 """
 
-from fastapi import APIRouter
+from __future__ import annotations
 
-from app.schemas import Recommendation
+from typing import Any, Dict, List
+from fastapi import APIRouter, HTTPException
+
+from ml.recommendation_engine import generate_recommendations
 
 router = APIRouter(prefix="/api/recommendations", tags=["recommendations"])
 
 
 @router.get(
     "/{branch_id}",
-    response_model=list[Recommendation],
     summary="Get operational recommendations for a branch",
 )
-async def get_recommendations(branch_id: str) -> list:
-    """
-    Returns recommended operational actions for a branch.
-    NOT YET IMPLEMENTED — recommendation engine will be wired here in a later step.
-    """
-    return []
+async def get_branch_recommendations(branch_id: str) -> List[Dict[str, Any]]:
+    """Returns grounded recommendations (staff reassignment, digital diversion, etc.) for branch."""
+    try:
+        return generate_recommendations(branch_id=branch_id)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e))
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

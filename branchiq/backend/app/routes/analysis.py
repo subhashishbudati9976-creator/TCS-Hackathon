@@ -116,9 +116,21 @@ async def get_branch_summary_all():
 
 
 @router.get("/waiting-time-summary", summary="Cross-dimensional waiting time statistics")
+@router.get("/waiting-times", summary="Cross-dimensional waiting time statistics (Requirement 7)")
 async def get_waiting_time_summary():
     """Waiting time percentiles broken down by all-branches, appointments, walk-ins, salary periods."""
     try:
         return _load_csv("waiting_time_summary.csv")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/feedback", summary="Customer feedback NLP metrics and sentiment analysis (Requirement 11)")
+async def get_feedback_analysis_route(branch_id: str | None = None):
+    """Aggregated feedback sentiment, top complaints, service satisfaction, and recent reviews."""
+    try:
+        from ml.feedback_nlp import get_feedback_analysis
+        return get_feedback_analysis(branch_id=branch_id)
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+

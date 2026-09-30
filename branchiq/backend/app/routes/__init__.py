@@ -7,6 +7,9 @@ from app.routes import (
     simulation,
     feedback,
     analysis,
+    customer,
+    auth,
+    intelligence,
 )
 
 __all__ = [
@@ -18,4 +21,7 @@ __all__ = [
     "simulation",
     "feedback",
     "analysis",
+    "customer",
+    "auth",
+    "intelligence",
 ]
