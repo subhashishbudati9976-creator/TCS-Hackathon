@@ -1,0 +1,56 @@
+# ─── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+*.pyo
+*.pyd
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ─── Environment / secrets ───────────────────────────────────────────────────
+.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+
+# ─── Database ────────────────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ─── Node / frontend ─────────────────────────────────────────────────────────
+node_modules/
+dist/
+.vite/
+*.local
+
+# ─── IDE / OS ────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ─── Logs ────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ─── ML artefacts ────────────────────────────────────────────────────────────
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+models/saved/
