@@ -44,8 +44,8 @@ customer experience.
 </p>
 
 <p align="center">
-  <img src="./Images/Screenshot 2026-10-01 125144.png" alt="Analytics Dashboard" width="48%">
-  <img src="./Images/Screenshot 2026-10-01 134630.png" alt="Operational Recommendations" width="48%">
+  <img src="./Images/Screenshot 2026-09-30 125144.png" alt="Analytics Dashboard" width="48%">
+  <img src="./Images/Screenshot 2026-09-30 134630.png" alt="Operational Recommendations" width="48%">
 </p>
 ---
 
