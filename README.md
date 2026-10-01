@@ -8,12 +8,45 @@ make smarter staffing decisions through data-driven recommendations.
 
 ---
 
+<p align="center">
+  <img src="./Images/Screenshot 2026-10-01 145844.png" alt="AVENUE Dashboard" width="100%">
+</p>
+
+---
+
 ## Problem Statement
 
 Banks suffer from uneven customer traffic across branches and time periods,
 causing long queues, staff overload, service bottlenecks, and inconsistent
 customer experience.
 
+---
+
+## 📸 Platform Preview
+
+<p align="center">
+  <img src="./Images/Screenshot 2026-10-01 145844.png" alt="Branch Manager Dashboard" width="48%">
+  <img src="./Images/Screenshot 2026-10-01 145850.png" alt="Customer Dashboard" width="48%">
+</p>
+
+<p align="center">
+  <img src="./Images/Screenshot 2026-10-01 145909.png" alt="Analytics Dashboard" width="48%">
+  <img src="./Images/Screenshot 2026-10-01 145916.png" alt="Operational Recommendations" width="48%">
+</p>
+
+<p align="center">
+  <img src="./Images/Screenshot 2026-10-01 145923.png" alt="Analytics Dashboard" width="48%">
+  <img src="./Images/Screenshot 2026-10-01 145929.png" alt="Operational Recommendations" width="48%">
+</p>
+
+<p align="center">
+  <img src="./Images/Screenshot 2026-10-01 150058.png" alt="Analytics Dashboard" width="48%">
+</p>
+
+<p align="center">
+  <img src="./Images/Screenshot 2026-10-01 125144.png" alt="Analytics Dashboard" width="48%">
+  <img src="./Images/Screenshot 2026-10-01 134630.png" alt="Operational Recommendations" width="48%">
+</p>
 ---
 
 ## System Capabilities (Roadmap)
