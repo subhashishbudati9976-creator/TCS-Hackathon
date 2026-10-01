@@ -2,7 +2,7 @@
 
 > **TCS Hackathon Project**
 
-BranchIQ is an AI-powered operations platform that helps bank branch managers
+AVENUE is an AI-powered operations platform that helps bank branch managers
 reduce queue wait times, detect service bottlenecks before they happen, and
 make smarter staffing decisions through data-driven recommendations.
 
@@ -47,27 +47,28 @@ customer experience.
   <img src="./Images/Screenshot 2026-09-30 125144.png" alt="Analytics Dashboard" width="48%">
   <img src="./Images/Screenshot 2026-09-30 134630.png" alt="Operational Recommendations" width="48%">
 </p>
+
 ---
 
-## System Capabilities (Roadmap)
+## System Capabilities
 
 | # | Capability | Status |
 |---|-----------|--------|
-| 1 | Demand Forecasting — predict future branch traffic | 🔲 Planned |
-| 2 | Bottleneck Detection — detect pressure before queues form | 🔲 Planned |
-| 3 | Wait Time Estimation — real-time queue pressure scores | 🔲 Planned |
-| 4 | Recommendation Engine — staff reassignment, customer redirection | 🔲 Planned |
-| 5 | Simulation Engine — model impact of proposed actions | 🔲 Planned |
-| 6 | Feedback NLP — sentiment analysis on customer comments | 🔲 Planned |
-| 7 | Branch Manager Dashboard — premium real-time UI | 🔲 Planned |
+| 1 | Demand Forecasting — predict future branch traffic | ✅ Completed |
+| 2 | Bottleneck Detection — detect pressure before queues form | ✅ Completed |
+| 3 | Wait Time Estimation — real-time queue pressure scores | ✅ Completed |
+| 4 | Recommendation Engine — staff reassignment, customer redirection | ✅ Completed |
+| 5 | Simulation Engine — model impact of proposed actions | ✅ Completed |
+| 6 | Feedback NLP — sentiment analysis on customer comments | ✅ Completed |
+| 7 | Branch Manager Dashboard — premium real-time UI | ✅ Completed |
 | ✅ | Project foundation — API + frontend shell | **Done** |
 
 ---
 
 ## Architecture
 
-```
-branchiq/
+```text
+avenue/
 ├── frontend/                  # React + TypeScript + Vite + Tailwind + Recharts
 │   └── src/
 │       ├── api/               # Axios client (VITE_API_BASE_URL)
