@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(0, 'branchiq/backend')
 
+# pyrefly: ignore [missing-import]
 from app.services.data_analysis import data_service
 
 print("=== AVENUE Backend Service Verification ===")
