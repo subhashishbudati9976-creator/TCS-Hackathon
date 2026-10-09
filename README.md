@@ -16,7 +16,7 @@ dashboard** into a single system.
 <p align="center">
   <img src="./Images/Screenshot 2026-10-01 145844.png" alt="AVENUE Dashboard" width="100%">
 </p>
-Deployed Frontend link : https://tcs-hackathon-gold.vercel.app/login
+Deployed Frontend link : https://tcs-hackathon-gold.vercel.app/login<br>
 Deployed Backend link : https://tcs-hackathon-nfq3-eta.vercel.app/
 ---
 
