@@ -1,3 +1,4 @@
+
 /**
  * TechText — AVENUE
  * Major heading treatment with a refined technical identity:
@@ -13,7 +14,7 @@ interface TechTextProps {
   size?: string
   className?: string
   /** Tag to render as — defaults to span, set to 'h1'/'h2' etc. as needed */
-  as?: keyof JSX.IntrinsicElements
+  as?: keyof React.JSX.IntrinsicElements
   /** Accent color for the gradient highlight — defaults to emerald */
   accent?: string
 }
